@@ -1,0 +1,27 @@
+@import '@material/top-app-bar/mdc-top-app-bar';
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+@import "@material/tab/mixins";
+@import "@material/tab-indicator/mixins";
+@import "@material/ripple/mixins";
+
+body {
+  margin: 0;
+}
+
+.desert-fox-tab {
+  @include mdc-tab-text-label-color(white);
+  @include mdc-tab-icon-color(white);
+
+  .mdc-tab__ripple {
+    @include mdc-states(white);
+  }
+}
+
+.desert-fox-tab-indicator {
+  @include mdc-tab-indicator-underline-color(white);
+}
+
+
