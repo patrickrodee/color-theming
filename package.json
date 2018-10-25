@@ -28,6 +28,7 @@
     "webpack-dev-server": "^2.11.3"
   },
   "dependencies": {
+    "@material/card": "^0.40.1",
     "@material/ripple": "^0.40.1",
     "@material/tab": "^0.40.1",
     "@material/tab-bar": "^0.40.1",

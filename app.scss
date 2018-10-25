@@ -6,9 +6,17 @@
 @import "@material/tab/mixins";
 @import "@material/tab-indicator/mixins";
 @import "@material/ripple/mixins";
+@import "@material/card/mdc-card";
 
 body {
   margin: 0;
+}
+
+.desert-fox-top-navigation {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .desert-fox-tab {
@@ -24,4 +32,37 @@ body {
   @include mdc-tab-indicator-underline-color(white);
 }
 
+.desert-fox-body {
+  padding-top: 112px;
+}
+
+.desert-fox-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.desert-fox-card {
+  width: calc((100% - 16px) / 4 - 16px);
+  margin-left: 16px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.desert-fox-image { 
+  padding-bottom: 66.7%;
+  box-sizing: border-box;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+  }
+}
 
