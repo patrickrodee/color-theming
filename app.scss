@@ -7,6 +7,7 @@
 @import "@material/tab-indicator/mixins";
 @import "@material/ripple/mixins";
 @import "@material/card/mdc-card";
+@import "@material/typography/mixins";
 
 body {
   margin: 0;
@@ -41,11 +42,14 @@ body {
   flex-direction: row;
 }
 
+$card-text-label-baseline: 16px;
+
 .desert-fox-card {
   width: calc((100% - 16px) / 4 - 16px);
   margin-left: 16px;
   margin-top: 16px;
   overflow: hidden;
+  padding-bottom: $card-text-label-baseline;
 }
 
 .desert-fox-image { 
@@ -64,5 +68,12 @@ body {
     background-position: 50%;
     background-size: cover;
   }
+}
+
+.desert-fox-card__text-label {
+  margin-left: 8px;
+  @include mdc-typography(body2);
+  @include mdc-typography-baseline-top(24px);
+  @include mdc-typography-baseline-bottom($card-text-label-baseline);
 }
 
