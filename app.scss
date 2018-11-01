@@ -41,6 +41,8 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  max-width: 1480px;
+  margin: auto;
 }
 
 @media (max-width: 599px) {
@@ -83,7 +85,7 @@ $card-text-label-baseline: 16px;
 }
 
 .desert-fox-image {
-  padding-bottom: 66.7%;
+  padding-bottom: 150%;
   box-sizing: border-box;
   position: relative;
 
