@@ -1,4 +1,17 @@
 $mdc-theme-primary: #5d1049;
+$mdc-typography-font-family: unquote("Montserrat, sans-serif");
+$mdc-typography-styles-button: (
+  font-size: 14px,
+  font-weight: bold,
+);
+$mdc-typography-styles-headline5: (
+  font-size: 24px,
+);
+$mdc-typography-styles-headline6: (
+  font-size: 21px,
+  font-family: unquote("Lekton, sans-serif"),
+  font-weight: bold,
+);
 $mdc-shape-small-component-radius: 8px;
 
 @import '@material/top-app-bar/mdc-top-app-bar';
@@ -70,15 +83,17 @@ $card-text-label-baseline: 16px;
 
 @media (max-width: 960px) {
   .desert-fox-card {
-    width: calc((100% - 32px - 2*16px) / 3);
-    margin-left: 16px;
+    width: calc((100% - 32px - 2*16px) / 2);
+    margin-left: 24px;
+    margin-top: 24px;
   }
 }
 
 @media (max-width: 599px) {
   .desert-fox-card {
-    width: calc((100% - 32px - 1*16px) / 2);
-    margin-left: 16px;
+    width: calc((100% - 32px - 16px) / 1);
+    margin-left: 24px;
+    margin-top: 24px;
   }
 }
 
