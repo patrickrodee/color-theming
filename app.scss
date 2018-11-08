@@ -70,17 +70,15 @@ $card-text-label-baseline: 16px;
 
 @media (max-width: 960px) {
   .desert-fox-card {
-    width: calc((100% - 32px - 2*16px) / 2);
-    margin-left: 24px;
-    margin-top: 24px;
+    width: calc((100% - 32px - 2*16px) / 3);
+    margin-left: 16px;
   }
 }
 
 @media (max-width: 599px) {
   .desert-fox-card {
-    width: calc((100% - 32px - 16px) / 1);
-    margin-left: 24px;
-    margin-top: 24px;
+    width: calc((100% - 32px - 1*16px) / 2);
+    margin-left: 16px;
   }
 }
 
