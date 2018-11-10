@@ -1,12 +1,12 @@
-$mdc-theme-primary: #5d1049;
-$mdc-typography-font-family: unquote("Montserrat, sans-serif");
-$mdc-typography-styles-button: (
-  font-size: 14px,
-);
-$mdc-typography-styles-headline6: (
-  font-size: 20px,
-);
-$mdc-shape-small-component-radius: 8px;
+// $mdc-theme-primary: #5d1049;
+// $mdc-typography-font-family: unquote("Montserrat, sans-serif");
+// $mdc-typography-styles-button: (
+//  font-size: 14px,
+// );
+// $mdc-typography-styles-headline6: (
+//  font-size: 20px,
+// );
+// $mdc-shape-small-component-radius: 16px;
 
 @import '@material/top-app-bar/mdc-top-app-bar';
 @import "@material/tab-bar/mdc-tab-bar";
