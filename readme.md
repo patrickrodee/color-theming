@@ -1,6 +1,6 @@
 # A simple app to show you how easy it is to apply Material Theming using Material Components for the Web.
 
-Make changes in `app.scss` to see your theme get applied throughout the app.
+Remix It! Make changes in `app.scss` to see your theme get applied throughout the app.
 
 **Changes the primary theme color**
 ```
