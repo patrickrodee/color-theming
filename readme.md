@@ -1,6 +1,6 @@
 # A simple app to show you how easy it is to apply Material Theming using Material Components for the Web.
 
-Makes changes in `app.scss` to see your theme get applied throughout the app.
+Make changes in `app.scss` to see your theme get applied throughout the app.
 
 **Changes the primary theme color**
 ```
@@ -22,3 +22,7 @@ $mdc-typography-styles-headline6: (
 ```
 $mdc-shape-small-component-radius: 16px;
 ```
+
+## Interested in learning more?
+[Material Theming](https://material.io/design/material-theming/overview.html#material-theming)
+[Material Components for the Web](https://github.com/material-components/material-components-web)

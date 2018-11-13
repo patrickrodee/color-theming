@@ -1,3 +1,4 @@
+// Material Theming
 $mdc-theme-primary: #880e4f;
 $mdc-typography-font-family: unquote("Montserrat, sans-serif");
 $mdc-typography-styles-button: (
@@ -8,6 +9,7 @@ $mdc-typography-styles-headline6: (
 );
 $mdc-shape-small-component-radius: 16px;
 
+// Imports the styles for each Material Component
 @import '@material/top-app-bar/mdc-top-app-bar';
 @import "@material/tab-bar/mdc-tab-bar";
 @import "@material/tab-scroller/mdc-tab-scroller";
