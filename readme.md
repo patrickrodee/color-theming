@@ -1,11 +1,14 @@
-A simple app to show you how easy it is to apply Material Theming to your app using Material Components for the Web.
+# A simple app to show you how easy it is to apply Material Theming using Material Components for the Web.
 
-Makes changes in app.scss to see
+Makes changes in app.scss to see your theme get applied throughout the app.
 
-// Changes the primary theme color
+**Changes the primary theme color**
+```
 $mdc-theme-primary: #880e4f;
+```
 
-// Changes the typography
+**Changes the typography**
+```
 $mdc-typography-font-family: unquote("Montserrat, sans-serif");
 $mdc-typography-styles-button: (
  font-size: 14px,
@@ -13,6 +16,9 @@ $mdc-typography-styles-button: (
 $mdc-typography-styles-headline6: (
  font-size: 20px,
 );
+```
 
-// Changes the shape
+**Changes the shape**
+```
 $mdc-shape-small-component-radius: 16px;
+```
