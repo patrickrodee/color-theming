@@ -24,5 +24,5 @@ $mdc-shape-small-component-radius: 16px;
 ```
 
 ## Interested in learning more?
-[Material Theming](https://material.io/design/material-theming/overview.html#material-theming)
-[Material Components for the Web](https://github.com/material-components/material-components-web)
+[Material Theming](http://bit.ly/2OGLLgI)
+[Material Components for the Web](http://bit.ly/2B2rMWf)
