@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p && cp index.html dist && cp -r media dist",
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --host 0.0.0.0 --public adopt-a-pup.glitch.me",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
