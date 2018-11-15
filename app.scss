@@ -19,6 +19,7 @@ $mdc-shape-small-component-radius: 16px;
 @import "@material/tab-indicator/mixins";
 @import "@material/ripple/mixins";
 @import "@material/card/mdc-card";
+@import "@material/layout-grid/mdc-layout-grid";
 @import "@material/typography/mixins";
 
 body {
@@ -45,83 +46,23 @@ body {
   @include mdc-tab-indicator-underline-color(white);
 }
 
-.adopt-a-pup-body {
-  padding-top: 112px;
-  max-width: 1480px;
-  margin: auto;
-}
-
 .adopt-a-pup-puppers {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
+  max-width: 1480px;
 }
 
 .adopt-a-pup-body--hidden {
   display: none;
 }
 
-@media (max-width: 599px) {
-  .adopt-a-pup-body {
-    padding-top: 104px;
-  }
-}
-
 $card-text-label-baseline: 16px;
-
-.adopt-a-pup-card {
-  width: calc((100% - 48px - 3*24px) / 4);
-  margin-left: 24px;
-  margin-top: 24px;
-  overflow: hidden;
-  padding-bottom: $card-text-label-baseline;
-  min-width: 120px;
-}
-
-@media (max-width: 1200px) {
-  .adopt-a-pup-card {
-    width: calc((100% - 48px - 2*24px) / 3);
-  }
-}
-
-@media (max-width: 960px) {
-  .adopt-a-pup-card {
-    width: calc((100% - 32px - 2*16px) / 3);
-    margin-left: 16px;
-    margin-top: 16px;
-  }
-}
-
-@media (max-width: 599px) {
-  .adopt-a-pup-card {
-    width: calc((100% - 32px - 1*16px) / 2);
-    margin-left: 16px;
-    margin-top: 16px;
-  }
-}
-
-// .adopt-a-pup-image {
-//   padding-bottom: 150%;
-//   box-sizing: border-box;
-//   position: relative;
-
-//   img {
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//     height: 100%;
-//     background-repeat: no-repeat;
-//     background-position: 50%;
-//     background-size: cover;
-//   }
-// }
 
 .adopt-a-pup-card__text-label {
   margin-left: 8px;
   @include mdc-typography(headline6);
   @include mdc-typography-baseline-top(32px);
-  @include mdc-typography-baseline-bottom($card-text-label-baseline);
+  @include mdc-typography-baseline-bottom(-$card-text-label-baseline);
+}
+
+.adopt-a-pup--fixed-adjust {
+  padding-top: 112px;
 }
