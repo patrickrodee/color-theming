@@ -69,16 +69,19 @@ const removeForm = (card) => {
 
 const addForm = (card) => {
   const cardActions = card.querySelector('.mdc-card__actions');
-  card.insertBefore(adoptForm, cardActions);
   adoptForm.classList.remove(adoptFormHiddenClass);
-  cardActions.querySelector('.adopt-form__button-text').innerText = 'Send Info';
-  cardActions.querySelector('.adopt-form__button-icon').innerText = 'send';
-  const animatingAdoptForm = card.querySelector(`.${animatingContainerClass}`);
-
-  animatingAdoptForm.classList.add(animatingClass);
   requestAnimationFrame(() => {
-    animatingAdoptForm.classList.remove(animatingClass);
+    card.insertBefore(adoptForm, cardActions);
+    cardActions.querySelector('.adopt-form__button-text').innerText = 'Send Info';
+    cardActions.querySelector('.adopt-form__button-icon').innerText = 'send';
+    const animatingAdoptForm = card.querySelector(`.${animatingContainerClass}`);
+
+    animatingAdoptForm.classList.add(animatingClass);
+    requestAnimationFrame(() => {
+      animatingAdoptForm.classList.remove(animatingClass);
+    });
   });
+  
 }
 
 const handleAdoptFormClick = (e) => {
