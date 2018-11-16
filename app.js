@@ -14,3 +14,16 @@ tabBar.listen('MDCTabBar:activated', (activatedEvent) => {
   });
 });
 
+
+let currentAdoptCardForm = null;
+const cardActions = document.querySelectorAll('.mdc-card__primary-action');
+const handleCardActionClick = (e) => {
+  if (currentAdoptCardForm) {
+    
+    if (currentAdoptCard
+  }
+}
+
+cardActions.forEach(cardAction => {
+  document.addEventListener('click', handleCardActionClick);
+});
