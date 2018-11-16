@@ -81,7 +81,7 @@ $card-text-label-baseline: 16px;
 }
 
 .adopt-form {
-  padding: 12px;
+  padding: 16px;
   overflow: hidden;
 }
 
@@ -90,7 +90,7 @@ $card-text-label-baseline: 16px;
 }
 
 .adopt-form__animating-container {
-  padding: 12px;
+  //padding: 12px;
   overflow: hidden;
   transform: translateY(0);
   transition: transform cubic-bezier(.4, 0, .2, 1) 250ms;
@@ -115,4 +115,10 @@ $card-text-label-baseline: 16px;
 
 .mdc-card__actions { 
   justify-content: flex-end; 
+}
+
+.mdc-typography--caption {
+  @include mdc-typography(caption);
+  @include mdc-typography-baseline-top(24px);
+  @include mdc-typography-baseline-bottom(-$card-text-label-baseline);
 }
