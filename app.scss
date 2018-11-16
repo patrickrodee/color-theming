@@ -63,17 +63,19 @@ body {
 $card-text-label-baseline: 16px;
 
 .adopt-a-pup-card__text-label {
-  margin-left: 16px;
+  margin: 0 16px;
   @include mdc-typography(headline6);
   @include mdc-typography-baseline-top(32px);
 //@include mdc-typography-baseline-bottom(-$card-text-label-baseline);
 }
 
+$card-secondary-baseline: 16px;
+
 .adopt-a-pup-card__secondary {
-  margin-left: 16px;
+  margin: 0 16px;
   @include mdc-typography(body2);
   @include mdc-typography-baseline-top(24px);
-  @include mdc-typography-baseline-bottom(-$card-text-label-baseline);
+  @include mdc-typography-baseline-bottom(-$card-secondary-baseline);
 }
 
 .adopt-a-pup--fixed-adjust {
@@ -81,7 +83,7 @@ $card-text-label-baseline: 16px;
 }
 
 .adopt-form {
-  padding: 16px;
+  padding: 0 16px 16px;
   overflow: hidden;
 }
 
