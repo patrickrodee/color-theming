@@ -16,12 +16,22 @@ tabBar.listen('MDCTabBar:activated', (activatedEvent) => {
 
 
 let currentAdoptCardForm = null;
+const adoptForm = document.querySelector('.adopt-form');
 const cardActions = document.querySelectorAll('.mdc-card__primary-action');
+
+const removeForm = (card) => {
+  
+}
+
 const handleCardActionClick = (e) => {
   if (currentAdoptCardForm) {
-    
-    if (currentAdoptCard
+    removeForm(currentAdoptCardForm);
+    if (currentAdoptCardForm === e.target) return;
   }
+  
+  currentAdoptCardForm = e.target;
+  
+  
 }
 
 cardActions.forEach(cardAction => {
