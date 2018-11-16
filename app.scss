@@ -66,13 +66,13 @@ $card-text-label-baseline: 16px;
   margin-left: 16px;
   @include mdc-typography(headline6);
   @include mdc-typography-baseline-top(32px);
-  //@include mdc-typography-baseline-bottom(-$card-text-label-baseline);
+//@include mdc-typography-baseline-bottom(-$card-text-label-baseline);
 }
 
 .adopt-a-pup-card__secondary {
   margin-left: 16px;
   @include mdc-typography(body2);
-  @include mdc-typography-baseline-top(32px);
+  @include mdc-typography-baseline-top(24px);
   @include mdc-typography-baseline-bottom(-$card-text-label-baseline);
 }
 
@@ -111,4 +111,8 @@ $card-text-label-baseline: 16px;
 
 .mdc-select {
   @include mdc-select-shape-radius($mdc-shape-small-component-radius);
+}
+
+.mdc-card__actions { 
+  justify-content: flex-end; 
 }
