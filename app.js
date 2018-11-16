@@ -48,6 +48,7 @@ populateStates();
 let currentAdoptCardForm = null;
 const animatingClass = 'adopt-form__animating-container--animating';
 const animatingContainerClass = 'adopt-form__animating-container';
+const adoptFormHiddenClass = 'adopt-form--hidden';
 const adoptForm = document.querySelector('.adopt-form');
 const adoptFormButtons = document.querySelectorAll('.adopt-form__button');
 
@@ -62,12 +63,14 @@ const removeForm = (card) => {
     if (!card) return;
     card.removeChild(adoptForm);
     document.body.appendChild(adoptForm);
+    adoptForm.classList.add(adoptFormHiddenClass);
   }, 200);
 }
 
 const addForm = (card) => {
   const cardActions = card.querySelector('.mdc-card__actions');
   card.insertBefore(adoptForm, cardActions);
+  adoptForm.classList.remove(adoptFormHiddenClass);
   cardActions.querySelector('.adopt-form__button-text').innerText = 'Send Info';
   cardActions.querySelector('.adopt-form__button-icon').innerText = 'send';
   const animatingAdoptForm = card.querySelector(`.${animatingContainerClass}`);

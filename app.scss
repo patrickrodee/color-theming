@@ -78,6 +78,10 @@ $card-text-label-baseline: 16px;
   overflow: hidden;
 }
 
+.adopt-form--hidden {
+  visibility: hidden;
+}
+
 .adopt-form__animating-container {
   padding: 12px;
   overflow: hidden;
