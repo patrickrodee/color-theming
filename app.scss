@@ -3,6 +3,7 @@ $mdc-theme-primary: #880e4f;
 $mdc-typography-font-family: unquote("Montserrat, sans-serif");
 $mdc-typography-styles-button: (
  font-size: 14px,
+ font-weight: bold,
 );
 $mdc-typography-styles-headline6: (
  font-size: 20px,
@@ -73,7 +74,7 @@ $card-secondary-baseline: 16px;
 
 .adopt-a-pup-card__secondary {
   margin: 0 16px;
-  @include mdc-typography(body2);
+  @include mdc-typography(body);
   @include mdc-typography-baseline-top(24px);
   @include mdc-typography-baseline-bottom(-$card-secondary-baseline);
 }
@@ -123,9 +124,4 @@ $card-secondary-baseline: 16px;
   @include mdc-typography(caption);
   @include mdc-typography-baseline-top(24px);
   @include mdc-typography-baseline-bottom(-$card-text-label-baseline);
-}
-
-.mdc-card__action--button {
-  @include mdc-typography(button);
-  font-weight: bold;
 }
