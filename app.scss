@@ -74,7 +74,7 @@ $card-secondary-baseline: 16px;
 
 .adopt-a-pup-card__secondary {
   margin: 0 16px;
-  @include mdc-typography(body);
+  @include mdc-typography(body2);
   @include mdc-typography-baseline-top(24px);
   @include mdc-typography-baseline-bottom(-$card-secondary-baseline);
 }
