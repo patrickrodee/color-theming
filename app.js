@@ -55,7 +55,7 @@ const adoptFormButtons = document.querySelectorAll('.adopt-form__button');
 const removeForm = (card) => {
   const animatingAdoptForm = card.querySelector(`.${animatingContainerClass}`);
   const cardActions = card.querySelector('.mdc-card__actions');
-  cardActions.querySelector('.adopt-form__button-text').innerText = 'Adopt Me!';
+  cardActions.querySelector('.adopt-form__button-text').innerText = 'Adopt';
   cardActions.querySelector('.adopt-form__button-icon').innerText = 'pets';
 
   animatingAdoptForm.classList.add(animatingClass);
