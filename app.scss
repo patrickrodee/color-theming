@@ -124,3 +124,8 @@ $card-secondary-baseline: 16px;
   @include mdc-typography-baseline-top(24px);
   @include mdc-typography-baseline-bottom(-$card-text-label-baseline);
 }
+
+.mdc-card__action--button {
+  @include mdc-typography(button);
+  font-weight: bold;
+}
