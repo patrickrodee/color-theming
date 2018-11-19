@@ -41,5 +41,8 @@
     "@material/select": "^0.41.0",
     "@material/layout-grid": "^0.41.0",
     "@material/typography": "^0.41.0"
-  }
+  },
+	"engines": {
+		"node": "10.x"
+	}  
 }
