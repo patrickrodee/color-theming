@@ -1,9 +1,6 @@
-const path = require('path');
-
 module.exports = [{
   entry: ['./app.scss', './app.js'],
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   module: {
@@ -14,7 +11,6 @@ module.exports = [{
           {
             loader: 'file-loader',
             options: {
-              path: path.resolve(__dirname, 'dist'),
               name: 'bundle.css',
             },
           },
