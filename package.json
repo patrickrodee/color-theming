@@ -3,11 +3,8 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p && cp index.html dist && cp -r media dist",
-    "start": "webpack-dev-server --host 0.0.0.0 --public $PROJECT_DOMAIN.glitch.me",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "build": "webpack -p && cp index.html dist",
+    "start": "webpack-dev-server --host 0.0.0.0 --public $PROJECT_DOMAIN.glitch.me"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -18,7 +15,6 @@
     "css-loader": "^1.0.0",
     "extract-loader": "^3.0.0",
     "file-loader": "^2.0.0",
-    "gh-pages": "^2.0.1",
     "node-sass": "^4.9.4",
     "sass-loader": "^7.1.0",
     "webpack": "^3.12.0",

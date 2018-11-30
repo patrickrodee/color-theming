@@ -1,4 +1,6 @@
-# A simple app to show you how easy it is to apply Material Theming using Material Components for the Web.
+# A file template to getting started with Material Components for the Web.
+
+This file template sets up the `webpack` configuration and installs the `npm` packages required to get Material Components for the Web up and running. It displays a simple Material button that says "Hello World"!
 
 Remix It! Make changes in `app.scss` to see your theme get applied throughout the app.
 
