@@ -1,7 +1,6 @@
 {
-  "name": "adopt-a-pup",
+  "name": "mdc-web-getting-started",
   "version": "0.1.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack -p && cp index.html dist && cp -r media dist",
@@ -10,8 +9,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "author": "Lynn Mercier and Yasmine Evjen",
-  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -29,18 +26,7 @@
   },
   "dependencies": {
     "@material/button": "^0.41.0",
-    "@material/card": "^0.41.0",
-    "@material/chips": "^0.41.0",
-    "@material/ripple": "^0.41.0",
-    "@material/tab": "^0.41.0",
-    "@material/tab-bar": "^0.41.0",
-    "@material/tab-indicator": "^0.41.0",
-    "@material/tab-scroller": "^0.41.0",
-    "@material/textfield": "^0.41.0",
-    "@material/top-app-bar": "^0.41.0",
-    "@material/select": "^0.41.0",
-    "@material/layout-grid": "^0.41.0",
-    "@material/typography": "^0.41.0"
+    "@material/ripple": "^0.41.0"
   },
 	"engines": {
 		"node": "10.x"
