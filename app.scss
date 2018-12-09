@@ -1,11 +1,13 @@
-// Material Theming, add your theming styles here
+// Material Theming
+//Define the theme variables before importing any MDC Web components
+
 
 // Imports the Styles for each Material Component
 @import "@material/button/mdc-button";
 
 // Check out the MDC Web documentation for how to use MDC Sass mixins:
 // https://github.com/material-components/material-components-web
-.foo-button {
-  @include mdc-button-ink-color(teal);
-  @include mdc-states(teal);
-}
+// .foo-button {
+//   @include mdc-button-ink-color(teal);
+//   @include mdc-states(teal);
+// }
