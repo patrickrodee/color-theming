@@ -22,9 +22,10 @@
   },
   "dependencies": {
     "@material/button": "^0.41.0",
-    "@material/ripple": "^0.41.0"
+    "@material/ripple": "^0.41.0",
+    "material": "^0.3.0"
   },
-	"engines": {
-		"node": "10.x"
-	}  
+  "engines": {
+    "node": "10.x"
+  }
 }
