@@ -1,7 +1,6 @@
 dependencies:
   '@material/button': 0.41.0
   '@material/ripple': 0.41.0
-  material: 0.3.0
 devDependencies:
   babel-core: 6.26.3
   babel-loader: 7.1.5
@@ -3044,10 +3043,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
-  /material/0.3.0:
-    dev: false
-    resolution:
-      integrity: sha1-2NkqlCC9K99c1Ep8TN/mNoIDXUg=
   /math-random/1.0.1:
     dev: true
     resolution:
@@ -5213,7 +5208,6 @@ specifiers:
   css-loader: ^1.0.0
   extract-loader: ^3.0.0
   file-loader: ^2.0.0
-  material: ^0.3.0
   node-sass: ^4.9.4
   sass-loader: ^7.1.0
   webpack: ^3.12.0
