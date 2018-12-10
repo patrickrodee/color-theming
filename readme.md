@@ -6,8 +6,6 @@ This file template sets up the `webpack` configuration and installs the `npm` pa
 ## Interested in learning more?
 Check out the [Material Components for the Web](https://github.com/material-components/material-components-web) documentation to add more components and styling.
 
-[Material Components for the Web](https://github.com/material-components/material-components-web)
-
 Read the full [Getting Started guide](https://github.com/material-components/material-components-web/blob/master/docs/getting-started.md)
 
 [Material Theming](https://material.io/design/material-theming)
