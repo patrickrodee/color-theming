@@ -13,3 +13,8 @@
 //   @include mdc-button-ink-color(lightblue);
 //   @include mdc-states(lightblue);
 // }
+
+// This styles all <p> elements with mdc-typography
+p {
+  @include mdc-typography(body1);
+}
