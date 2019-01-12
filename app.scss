@@ -14,7 +14,7 @@
 //   @include mdc-states(lightblue);
 // }
 
-// This styles all <p> elements with mdc-typography
+// This sets all <p> elements with Material body1 typography styles
 p {
   @include mdc-typography(body1);
 }
