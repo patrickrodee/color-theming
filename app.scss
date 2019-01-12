@@ -9,8 +9,6 @@
 
 // Check out the MDC Web documentation for how to use MDC Sass mixins:
 // https://github.com/material-components/material-components-web
-
-// This sets all <p> elements with Material body1 typography styles
 h1 {
   @include mdc-typography(headline1);
 }
@@ -35,6 +33,7 @@ h6 {
   @include mdc-typography(headline6); 
 }
 
+// This sets all <p> elements with Material body1 typography styles
 p {
   @include mdc-typography(body1);
 }
