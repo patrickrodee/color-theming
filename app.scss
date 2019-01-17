@@ -7,8 +7,9 @@
 @import "@material/typography/mdc-typography";
 @import "@material/button/mdc-button";
 
-// Check out the MDC Web documentation for how to use MDC Sass mixins:
-// https://github.com/material-components/material-components-web
+// This sets all <h1>,...,<h6> elements with Material headline1,...,headline6 typography styles
+// Check out the MDC Web documentation for how to use MDC Typography Sass mixins:
+// https://github.com/material-components/material-components-web/tree/master/packages/mdc-typography
 h1 {
   @include mdc-typography(headline1);
 }
