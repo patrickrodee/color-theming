@@ -1,0 +1,58 @@
+@function newColorSet($container, $high, $medium, $low, $accent, $error) {
+  @return (
+    container: $container,
+    high: $high,
+    medium: $medium,
+    low: $low,
+    accent: $accent,
+    error: $error,
+  );
+}
+
+@function ColorSet_getContainer($colorSet) {
+  @return map-get($colorSet, container);
+}
+
+@function ColorSet_getHighEmphasis($colorSet) {
+  @return map-get($colorSet, high);
+}
+
+@function ColorSet_getMediumEmphasis($colorSet) {
+  @return map-get($colorSet, medium);
+}
+
+@function ColorSet_getLowEmphasis($colorSet) {
+  @return map-get($colorSet, low);
+}
+
+@function ColorSet_getAccent($colorSet) {
+  @return map-get($colorSet, accent);
+}
+
+@function ColorSet_getError($colorSet) {
+  @return map-get($colorSet, error);
+}
+
+@function getColor($colorSet, $colorMap, $elementName) {
+  $colorName: map-get($colorMap, $elementName);
+
+  @if ($colorName == highEmphasis) {
+    @return ColorSet_getHighEmphasis($colorSet);
+  }
+
+  @if ($colorName == mediumEmphasis) {
+    @return ColorSet_getMediumEmphasis($colorSet);
+  }
+
+  @if ($colorName == lowEmphasis) {
+    @return ColorSet_getLowEmphasis($colorSet);
+  }
+
+  @if ($colorName == accent) {
+    @return ColorSet_getAccent($colorSet);
+  }
+
+  @if ($colorName == error) {
+    @return ColorSet_getError($colorSet);
+  }
+}
