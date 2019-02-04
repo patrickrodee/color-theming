@@ -1,5 +1,5 @@
 @import "@material/button/mixins";
 
 .button {
-  
+  @mixin mdc-button($query: mdc-feature-all())
 }
