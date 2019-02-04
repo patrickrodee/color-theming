@@ -1,5 +1,6 @@
 @import "@material/button/mixins";
 @import "colors/theme";
+@import "button/theme";
 
 @include mdc-button(mdc-feature-without(color));
 
