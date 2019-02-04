@@ -23,7 +23,7 @@
     "webpack-dev-server": "^3.1.11"
   },
   "dependencies": {
-    "@material/button": "^0.41.0",
+    "@material/button": "^0.44.0",
     "@material/ripple": "^0.41.0",
     "@material/typography": "^0.42.0"
   },
