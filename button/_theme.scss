@@ -1,0 +1,10 @@
+$filledButtonMapping: (
+  ink: highEmphasis,
+  icon: highEmphasis,
+);
+
+@include filledButton($colorSet, $colorMap: filledButtonMapping) {
+  @include mdc-button-container-fill-color(ColorSet_getContainerColor($colorSet));
+  @include mdc-button-container-ink-color(getColor($colorSet, $colorMap, ink));
+  @include mdc-button-container-icon-color(getColor($colorSet, $colorMap, icon));
+}
