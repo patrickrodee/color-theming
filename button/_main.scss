@@ -7,3 +7,7 @@
 .button--filled {
   @include filledButton($whiteOnBlue);
 }
+
+.button--outline {
+  @include outlinedButton($whiteOnBlue);
+}
