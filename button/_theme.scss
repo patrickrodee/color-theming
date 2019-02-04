@@ -6,7 +6,7 @@ $filledButtonMapping: (
   icon: highEmphasis,
 );
 
-$outlineButtonMapping: (
+$outlinedButtonMapping: (
   ink: highEmphasis,
   icon: highEmphasis,
   outline: highEmphasis,
@@ -19,7 +19,7 @@ $outlineButtonMapping: (
   @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
 }
 
-@mixin outlinedButton($colorSet, $colorMap: $filledButtonMapping) {
+@mixin outlinedButton($colorSet, $colorMap: $outlinedButtonMapping) {
   @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
   @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
   @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
