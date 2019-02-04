@@ -8,8 +8,9 @@
   @include filledButton($whiteOnBlue);
 }
 
-.button--outline {
+.button--outlined {
   @include outlinedButton($blueOnWhite, (
+    ink: accent,
     outline: lowEmphasis,
   ));
 }

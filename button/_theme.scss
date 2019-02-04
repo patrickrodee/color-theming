@@ -14,14 +14,14 @@ $outlinedButtonMapping: (
 );
 
 @mixin filledButton($colorSet, $colorMap: ()) {
-  $mapping: map-merge($colorMap, $filledButtonMapping);
+  $map: map-merge($filledButtonMapping, $colorMap);
   @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
-  @include mdc-button-ink-color(getColor($colorSet, $mapping, ink));
-  @include mdc-button-icon-color(getColor($colorSet, $mapping, icon));
+  @include mdc-button-ink-color(getColor($colorSet, $map, ink));
+  @include mdc-button-icon-color(getColor($colorSet, $map, icon));
 }
 
 @mixin outlinedButton($colorSet, $colorMap: ()) {
-  $map: map-merge($colorMap, $outlinedButtonMapping);
+  $map: map-merge($outlinedButtonMapping, $colorMap);
   @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
   @include mdc-button-ink-color(getColor($colorSet, $map, ink));
   @include mdc-button-icon-color(getColor($colorSet, $map, icon));
