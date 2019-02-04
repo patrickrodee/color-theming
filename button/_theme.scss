@@ -6,7 +6,13 @@ $filledButtonMapping: (
   icon: highEmphasis,
 );
 
-@mixin filledButton($colorSet, $colorMap: filledButtonMapping) {
+$hairlineButtonMapping: (
+  ink: highEmphasis,
+  icon: highEmphasis,
+  outline: highEmphasis
+),
+
+@mixin filledButton($colorSet, $colorMap: $filledButtonMapping) {
   @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
   @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
   @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
