@@ -9,5 +9,7 @@
 }
 
 .button--outline {
-  @include outlinedButton($whiteOnBlue);
+  @include outlinedButton($blueOnWhite, (
+    outline: lowEmphasis,
+  ));
 }
