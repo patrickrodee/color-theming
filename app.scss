@@ -5,7 +5,8 @@
 
 // Import the styles for each MDC Web component
 @import "@material/typography/mdc-typography";
-@import "@material/button/mdc-button";
+// @import "@material/button/mdc-button";
+@import "button/main";
 
 // This sets all <h1>,...,<h6> elements with Material headline1,...,headline6 typography styles
 // Check out the MDC Web documentation for how to use MDC Typography Sass mixins:

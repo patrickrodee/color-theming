@@ -1,5 +1,8 @@
 @import "@material/button/mixins";
+@import "colors/theme";
 
-.button {
-  @mixin mdc-button($query: mdc-feature-all())
+@include mdc-button(mdc-feature-without(color));
+
+.button--filled {
+  @include filledButton($whiteOnBlue);
 }
