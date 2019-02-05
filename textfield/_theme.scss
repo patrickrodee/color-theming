@@ -10,6 +10,12 @@ $filledTextFieldMapping: (
   textLabel: medium,
 );
 
+$activeFilledTextFieldMapping: extendColorMapping($filledTextFieldMapping, (
+  bottomLine: accent,
+  helperText: accent,
+  textLabel: accent,
+));
+
 @mixin filledTextField($colorSet, $colorMap: $filledTextFieldMapping) {
   @include mdc-text-field-fill-color(ColorSet_getContainer($colorSet));
 
@@ -33,4 +39,8 @@ $filledTextFieldMapping: (
   @include ifColorMapHasKey($colorMap, outline) {
     @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, outline));
   }
+}
+
+@mixin activeFilledTextField($colorSet, $colorMap: $activeFilledTextFieldMapping) {
+  @include filledTextField($colorSet, $colorMap);
 }
