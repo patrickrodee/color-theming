@@ -4,7 +4,8 @@
 
 $filledTextFieldMapping: (
   ink: high,
-  outline: medium,
+  bottomLine: medium,
+  outline: accent,
 );
 
 @mixin filledTextField($colorSet, $colorMap: $filledTextFieldMapping) {
@@ -12,11 +13,20 @@ $filledTextFieldMapping: (
 
   @include ifColorMapHasKey($colorMap, ink) {
     @include mdc-text-field-ink-color(getColor($colorSet, $colorMap, ink));
+    @include mdc-text-field-label-color(getColor($colorSet, $colorMap, ink));
     @include mdc-states(getColor($colorSet, $colorMap, ink));
   }
   
+  @include ifColorMapHasKey($colorMap, bottomLine) {
+    @include mdc-text-field-bottom-line-color(getColor($colorSet, $colorMap, bottomLine));
+  }
+  
   @include ifColorMapHasKey($colorMap, outline) {
-    @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, ink));
+    @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, outline));
+  }
+  
+  &::focus {
+    @include ifColorMapHasKey($colorMap)
   }
 
 //   @include ifColorMapHasKey($colorMap, icon) {
