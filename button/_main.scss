@@ -58,17 +58,16 @@
   @include outlinedButton($primaryOnWhite);
 }
 
+$gmOutlinedButtonMapping: extendedColorMap($elevatedButtonMapping, (
+  outline: low,
+));
+
 // Aligned w/ GM via a mapping change from "high" outline to "low"
 .m-button--outlined--aligned {
-  @include outlinedButton($primaryOnWhite, (
-    outline: low,
-  ));
+  @include outlinedButton($primaryOnWhite, $gmOutlinedButtonMapping);
 }
 
 // Changes to color set and color mapping
 .gm-button--outlined {
-  @include outlinedButton($gmGreyOnWhite, (
-    outline: low,
-    ink: accent,
-  ));
+  @include outlinedButton($gmGreyOnWhite, $gmOutlinedButtonMapping);
 }

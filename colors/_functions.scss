@@ -13,6 +13,10 @@
   @return map-merge($colorSet, newColorSet($container, $high, $medium, $low, $accent, $error));
 }
 
+@function extendedColorMap($colorMap, $map) {
+  @return map-merge($colorMap, $map);
+}
+
 @function ColorSet_getContainer($colorSet) {
   @return map-get($colorSet, container);
 }
