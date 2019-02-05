@@ -1,4 +1,5 @@
 @import './functions';
 @import './variables';
 
-$whiteOnPrimary: newColorSet($white, $purple, $lightBlue, $midBlue, $white, $error);
+$whiteOnBlack: newColorSet($white, $black, $darkGrey, $lightGrey, $purple, $error);
+$whiteOnPrimary: newColorSet($white, $purple, rgba($purple, 60%), rgba($purple, 38%), $white, $error);

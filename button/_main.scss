@@ -1,5 +1,6 @@
 @import "@material/button/mixins";
 @import "colors/gm_theme";
+@import "colors/theme";
 @import "button/theme";
 
 @include mdc-button(mdc-feature-without(color));
@@ -12,6 +13,11 @@
 // Only changes to color set
 .gm-button--elevated {
   @include filledButton($gmBlueOnWhite);
+}
+
+// Baseline
+.m-button--outlined {
+  @include outlinedButton($whiteOnPrimary);
 }
 
 // Changes to color set and color mapping
