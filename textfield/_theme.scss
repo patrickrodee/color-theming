@@ -2,6 +2,7 @@
 @import "colors/mixins";
 @import "@material/textfield/mixins";
 @import "@material/floating-label/mixins";
+@import "@material/notched-outline/mixins";
 
 $filledTextFieldMapping: (
   ink: high,
@@ -10,6 +11,17 @@ $filledTextFieldMapping: (
   textLabel: medium,
   caret: accent,
   activeBottomLine: accent,
+  activeTextLabel: accent,
+  activeHelperText: accent,
+);
+
+$outlinedTextFieldMapping: (
+  ink: high,
+  outline: medium,
+  helperText: medium,
+  textLabel: medium,
+  caret: accent,
+  activeOutline: accent,
   activeTextLabel: accent,
   activeHelperText: accent,
 );
@@ -55,16 +67,14 @@ $filledTextFieldMapping: (
   }
 }
 
-@mixin outlinedTextField($colorSet, $colorMap: $filledTextFieldMapping) {
-  @include mdc-text-field-fill-color(ColorSet_getContainer($colorSet));
-
+@mixin outlinedTextField($colorSet, $colorMap: $outlinedTextFieldMapping) {
   @include ifColorMapHasKey($colorMap, ink) {
     @include mdc-text-field-ink-color(getColor($colorSet, $colorMap, ink));
     @include mdc-states(getColor($colorSet, $colorMap, ink));
   }
   
-  @include ifColorMapHasKey($colorMap, bottomLine) {
-    @include mdc-text-field-bottom-line-color(getColor($colorSet, $colorMap, bottomLine));
+  @include ifColorMapHasKey($colorMap, outline) {
+    @include mdc-notched-outline-color(getColor($colorSet, $colorMap, outline));
   }
   
   @include ifColorMapHasKey($colorMap, helperText) {
@@ -75,12 +85,12 @@ $filledTextFieldMapping: (
     @include mdc-text-field-label-color(getColor($colorSet, $colorMap, textLabel));
   }
   
-  @include ifColorMapHasKey($colorMap, activeBottomLine) {
-    @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, activeBottomLine));
-  }
-  
   @include ifColorMapHasKey($colorMap, caret) {
     @include mdc-text-field-caret-color(getColor($colorSet, $colorMap, caret));
+  }
+  
+  @include ifColorMapHasKey($colorMap, activeOutline) {
+    @include mdc-text-field-focused-outline-color(getColor($colorSet, $colorMap, activeOutline));
   }
   
   &.mdc-text-field--focused {

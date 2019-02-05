@@ -13,3 +13,10 @@
 .gm-text-field--filled {
   @include filledTextField($gmGreyOnGrey);
 }
+
+// **********************************
+// OUTLINED TEXT FIELD
+// **********************************
+.gm-text-field--outlined {
+  @include outlinedTextField($gmGreyOnWhite);
+}

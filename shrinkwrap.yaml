@@ -2,6 +2,7 @@ dependencies:
   '@material/button': 0.44.0
   '@material/elevation': 0.44.0
   '@material/floating-label': 0.44.0
+  '@material/notched-outline': 0.44.0
   '@material/ripple': 0.44.0
   '@material/textfield': 0.44.0
   '@material/typography': 0.44.0
@@ -5520,6 +5521,7 @@ specifiers:
   '@material/button': ^0.44.0
   '@material/elevation': ^0.44.0
   '@material/floating-label': ^0.44.0
+  '@material/notched-outline': ^0.44.0
   '@material/ripple': ^0.44.0
   '@material/textfield': ^0.44.0
   '@material/typography': ^0.44.0
