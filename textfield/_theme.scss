@@ -1,6 +1,7 @@
 @import "colors/functions";
 @import "colors/mixins";
 @import "@material/textfield/mixins";
+@import "@material/floatinglabel/mixins";
 
 $filledTextFieldMapping: (
   ink: high,
@@ -13,6 +14,7 @@ $filledTextFieldMapping: (
   @include mdc-text-field-fill-color(ColorSet_getContainer($colorSet));
 
   @include ifColorMapHasKey($colorMap, ink) {
+    @include mdc-text-field-caret-color(getColor($colorSet, $colorMap, ink));
     @include mdc-text-field-ink-color(getColor($colorSet, $colorMap, ink));
     @include mdc-text-field-label-color(getColor($colorSet, $colorMap, ink));
     @include mdc-states(getColor($colorSet, $colorMap, ink));
