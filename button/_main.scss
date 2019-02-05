@@ -16,6 +16,10 @@
   @include textButton($gmBlueOnWhite);
 }
 
+.gm-button--text--grey {
+  @include textButton($gmGreyOnWhite);
+}
+
 // **********************************
 // FILLED BUTTONS
 // **********************************
@@ -34,12 +38,12 @@
 // **********************************
 
 .m-button--elevated {
-  @include filledButton($whiteOnPrimary);
+  @include elevatedButton($whiteOnPrimary);
 }
 
 // Only changes to color set
 .gm-button--elevated {
-  @include filledButton($gmBlueOnWhite);
+  @include elevatedButton($gmBlueOnWhite);
 }
 
 
@@ -52,9 +56,10 @@
   @include outlinedButton($primaryOnWhite);
 }
 
+// Aligned w/ GM via a mapping change from "high" outline to "low"
 .m-button--outlined--aligned {
   @include outlinedButton($primaryOnWhite, (
-    outline: lowEmphasis,
+    outline: low,
   ));
 }
 
@@ -62,6 +67,6 @@
 .gm-button--outlined {
   @include outlinedButton($gmGreyOnWhite, (
     ink: accent,
-    outline: lowEmphasis,
+    outline: low,
   ));
 }
