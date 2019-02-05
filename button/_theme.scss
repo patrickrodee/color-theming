@@ -1,25 +1,27 @@
 @import "colors/functions";
 @import "@material/button/mixins";
+@import "@material/elevation/mixins";
 
 $textButtonMapping: (
-  ink: highEmphasis,
-  icon: highEmphasis,
+  ink: high,
+  icon: medium,
 );
 
 $filledButtonMapping: (
-  ink: highEmphasis,
-  icon: highEmphasis,
+  ink: high,
+  icon: high,
 );
 
 $outlinedButtonMapping: (
-  ink: highEmphasis,
-  icon: highEmphasis,
-  outline: highEmphasis,
+  ink: high,
+  icon: high,
+  outline: high,
 );
 
 $elevatedButtonMapping: (
-  ink: highEmphasis,
-  icon: highEmphasis,
+  ink: high,
+  icon: high,
+  shadow: medium,
 );
 
 @mixin textButton($colorSet, $colorMap: ()) {
@@ -40,6 +42,7 @@ $elevatedButtonMapping: (
   @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
   @include mdc-button-ink-color(getColor($colorSet, $map, ink));
   @include mdc-button-icon-color(getColor($colorSet, $map, icon));
+  @include mdc-elevation(2, getColor($colorSet, $map, shadow));
 }
 
 @mixin outlinedButton($colorSet, $colorMap: ()) {
@@ -47,5 +50,5 @@ $elevatedButtonMapping: (
   @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
   @include mdc-button-ink-color(getColor($colorSet, $map, ink));
   @include mdc-button-icon-color(getColor($colorSet, $map, icon));
-  @include mdc-button-outline-color(getColor($colorSet, $map, outline));
+  // @include mdc-button-outline-color(getColor($colorSet, $map, outline));
 }

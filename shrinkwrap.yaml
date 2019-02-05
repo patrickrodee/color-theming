@@ -1,5 +1,6 @@
 dependencies:
   '@material/button': 0.44.0
+  '@material/elevation': 0.44.0
   '@material/ripple': 0.44.0
   '@material/typography': 0.44.0
 devDependencies:
@@ -5471,6 +5472,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@material/button': ^0.44.0
+  '@material/elevation': ^0.44.0
   '@material/ripple': ^0.44.0
   '@material/typography': ^0.44.0
   babel-core: ^6.26.3
