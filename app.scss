@@ -12,9 +12,13 @@
   width: 100%;
   
   &__heading {
-    @include mdc-typography(headline3); 
+    @include mdc-typography(headline5); 
 
     text-align: left;
+  }
+  
+  &__cell {
+    padding: 1rem 0;
   }
 }
 
