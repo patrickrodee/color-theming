@@ -17,10 +17,11 @@ $filledTextFieldMapping: (
 
 $outlinedTextFieldMapping: (
   ink: high,
-  outline: medium,
+  outline: low,
   helperText: medium,
   textLabel: medium,
   caret: accent,
+  hoverOutline: low,
   activeOutline: accent,
   activeTextLabel: accent,
   activeHelperText: accent,
@@ -73,10 +74,6 @@ $outlinedTextFieldMapping: (
     @include mdc-states(getColor($colorSet, $colorMap, ink));
   }
   
-  @include ifColorMapHasKey($colorMap, outline) {
-    @include mdc-notched-outline-color(getColor($colorSet, $colorMap, outline));
-  }
-  
   @include ifColorMapHasKey($colorMap, helperText) {
     @include mdc-text-field-helper-text-color(getColor($colorSet, $colorMap, helperText));
   }
@@ -87,6 +84,14 @@ $outlinedTextFieldMapping: (
   
   @include ifColorMapHasKey($colorMap, caret) {
     @include mdc-text-field-caret-color(getColor($colorSet, $colorMap, caret));
+  }
+  
+  @include ifColorMapHasKey($colorMap, outline) {
+    @include mdc-notched-outline-color(getColor($colorSet, $colorMap, outline));
+  }
+  
+  @include ifColorMapHasKey($colorMap, hoverOutline) {
+    @include mdc-text-field-hover-outline-color(getColor($colorSet, $colorMap, hoverOutline));
   }
   
   @include ifColorMapHasKey($colorMap, activeOutline) {
