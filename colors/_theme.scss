@@ -18,3 +18,13 @@ $whiteOnPrimary: newColorSet(
   $accent: $white,
   $error: $error
 );
+
+$blackOnGreyWithPrimary: newColorSet(
+  $container: $superLightGrey,
+  $high: $black,
+  $medium: $darkGrey,
+  $low: $lightGrey,
+  $accent: #370,
+  $error: $error
+);
+

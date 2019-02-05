@@ -5,7 +5,11 @@
 
 // **********************************
 // FILLED TEXT FIELD
-// **********************************
+// ********************************
+.m-text-field--filled {
+  @include filledTextField($blackOnGreyWithPrimary);
+}
+
 .gm-text-field--filled {
   @include filledTextField($gmGreyOnGrey);
 }
