@@ -6,17 +6,15 @@
 $filledTextFieldMapping: (
   ink: high,
   bottomLine: medium,
-  outline: accent,
-  textLabel: accent,
+  helperText: medium,
+  textLabel: medium,
 );
 
 @mixin filledTextField($colorSet, $colorMap: $filledTextFieldMapping) {
   @include mdc-text-field-fill-color(ColorSet_getContainer($colorSet));
 
   @include ifColorMapHasKey($colorMap, ink) {
-    @include mdc-text-field-caret-color(getColor($colorSet, $colorMap, ink));
     @include mdc-text-field-ink-color(getColor($colorSet, $colorMap, ink));
-    @include mdc-text-field-label-color(getColor($colorSet, $colorMap, ink));
     @include mdc-states(getColor($colorSet, $colorMap, ink));
   }
   
@@ -24,25 +22,15 @@ $filledTextFieldMapping: (
     @include mdc-text-field-bottom-line-color(getColor($colorSet, $colorMap, bottomLine));
   }
   
+  @include ifColorMapHasKey($colorMap, helperText) {
+    @include mdc-text-field-helper-text-color(getColor($colorSet, $colorMap, helperText));
+  }
+  
+  @include ifColorMapHasKey($colorMap, textLabel) {
+    @include mdc-text-field-label-color(getColor($colorSet, $colorMap, textLabel));
+  }
+  
   @include ifColorMapHasKey($colorMap, outline) {
     @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, outline));
   }
-  
-  &::hover {
-    @include ifColorMapHasKey($colorMap, textLabel) {
-      @include mdc-text-field-label-color(getColor($colorSet, $colorMap, textLabel));
-    }
-  }
-  
-//   @include ifColorMapHasKey($colorMap, icon) {
-//     @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
-//   }
-//   @include ifColorMapHasKey($colorMap, ink) {
-//     @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
-//     @include mdc-states(getColor($colorSet, $colorMap, ink));
-//   }
-
-//   @include ifColorMapHasKey($colorMap, icon) {
-//     @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
-//   }
 }
