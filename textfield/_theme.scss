@@ -8,6 +8,7 @@ $filledTextFieldMapping: (
   bottomLine: medium,
   helperText: medium,
   textLabel: medium,
+  caret: accent,
   lineRipple: accent,
   activeTextLabel: accent,
   activeHelperText: accent,
@@ -37,7 +38,11 @@ $filledTextFieldMapping: (
     @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, lineRipple));
   }
   
-  .mdc-text-field--focused {
+  @include ifColorMapHasKey($colorMap, caret) {
+    @include mdc-text-field-caret-color(getColor($colorSet, $colorMap, caret));
+  }
+  
+  &.mdc-text-field--focused {
     @include ifColorMapHasKey($colorMap, activeTextLabel) {
       @include mdc-text-field-label-color(getColor($colorSet, $colorMap, activeTextLabel));
     }
