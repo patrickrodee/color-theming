@@ -32,7 +32,7 @@ $elevatedButtonMapping: (
   }
 }
 
-@mixin statefulTextButton($colorSet, $colorMap: $textButtonMapping) {
+@mixin statefulTextButton($colorSet, $colorMap) {
   &::hover,
   &::focus,
   &::active {
@@ -53,38 +53,58 @@ $elevatedButtonMapping: (
   }
 }
 
+@mixin statefulFilledButton($colorSet, $colorMap) {
+  &::hover,
+  &::focus,
+  &::active {
+    @include filledButton($colorSet, $colorMap);
+  }
+}
+
 @mixin elevatedButton($colorSet, $colorMap: $elevatedButtonMapping) {
   @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
   @include mdc-elevation(2);
   
   @include ifColorMapHasKey($colorMap, ink) {
-    @include mdc-button-ink-color(getColor($colorSet, $map, ink));
-    @include mdc-states(getColor($colorSet, $map, ink));
+    @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
+    @include mdc-states(getColor($colorSet, $colorMap, ink));
   }
   
   @include ifColorMapHasKey($colorMap, icon) {
-    @include mdc-button-icon-color(getColor($colorSet, $map, icon));
+    @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
   }
 }
 
-@mixin outlinedButton($colorSet, $colorMap: ()) {
-  $map: map-merge($outlinedButtonMapping, $colorMap);
-  @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
-  @include mdc-button-ink-color(getColor($colorSet, $map, ink));
-  @include mdc-button-icon-color(getColor($colorSet, $map, icon));
-  @include mdc-button-outline-color(getColor($colorSet, $map, outline));
-  @include mdc-states(getColor($colorSet, $map, ink));
-}
-
-@mixin statefulOutlinedButton($colorSet, $colorMap: ()) {
-  $map: map-merge($outlinedButtonMapping, $colorMap);
+@mixin statefulElevatedButton($colorSet, $colorMap) {
   &::hover,
-  &::active,
-  &::focus {
-    @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
-    @include mdc-button-ink-color(getColor($colorSet, $map, ink));
-    @include mdc-button-icon-color(getColor($colorSet, $map, icon));
-    @include mdc-button-outline-color(getColor($colorSet, $map, outline));
-    @include mdc-states(getColor($colorSet, $map, ink));
+  &::focus,
+  &::active {
+    @include elevatedButton($colorSet, $colorMap);
   }
 }
+
+@mixin outlinedButton($colorSet, $colorMap: $outlinedButtonMapping) {
+  @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
+  
+  @include ifColorMapHasKey($colorMap, ink) {
+    @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
+    @include mdc-states(getColor($colorSet, $colorMap, ink));
+  }
+  
+  @include ifColorMapHasKey($colorMap, icon) {
+    @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
+  }
+  
+  @include ifColorMapHasKey($colorMap, outline) {
+    @include mdc-button-outline-color(getColor($colorSet, $colorMap, outline));
+  }
+}
+
+@mixin statefulOutlinedButton($colorSet, $colorMap) {
+  &::hover,
+  &::focus,
+  &::active {
+    @include outlinedButton($colorSet, $colorMap);
+  }
+}
+

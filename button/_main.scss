@@ -59,6 +59,7 @@
 // Aligned w/ GM via a mapping change from "high" outline to "low"
 .m-button--outlined--aligned {
   @include outlinedButton($primaryOnWhite, (
+    ink: accent,
     outline: low,
   ));
 }
