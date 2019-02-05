@@ -8,13 +8,10 @@ $filledTextFieldMapping: (
   bottomLine: medium,
   helperText: medium,
   textLabel: medium,
+  lineRipple: accent,
+  activeTextLabel: accent,
+  activeHelperText: accent,
 );
-
-$activeFilledTextFieldMapping: extendColorMapping($filledTextFieldMapping, (
-  bottomLine: accent,
-  helperText: accent,
-  textLabel: accent,
-));
 
 @mixin filledTextField($colorSet, $colorMap: $filledTextFieldMapping) {
   @include mdc-text-field-fill-color(ColorSet_getContainer($colorSet));
@@ -36,11 +33,19 @@ $activeFilledTextFieldMapping: extendColorMapping($filledTextFieldMapping, (
     @include mdc-text-field-label-color(getColor($colorSet, $colorMap, textLabel));
   }
   
-  @include ifColorMapHasKey($colorMap, outline) {
-    @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, outline));
+  @include ifColorMapHasKey($colorMap, lineRipple) {
+    @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, lineRipple));
   }
-}
-
-@mixin activeFilledTextField($colorSet, $colorMap: $activeFilledTextFieldMapping) {
-  @include filledTextField($colorSet, $colorMap);
+  
+  .mdc-text-field--focused {
+    @include ifColorMapHasKey($colorMap, activeTextLabel) {
+      @include mdc-text-field-label-color(getColor($colorSet, $colorMap, activeTextLabel));
+    }
+    
+    .mdc-floating-label {
+      @include ifColorMapHasKey($colorMap, activeHelperText) {
+        @include mdc-floating-label-ink-color(getColor($colorSet, $colorMap, activeHelperText));
+      }
+    }
+  }
 }
