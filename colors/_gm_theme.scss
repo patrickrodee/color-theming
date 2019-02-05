@@ -10,5 +10,20 @@ $gmWhiteOnBlue: newColorSet(
   $error: $error
 );
 
-$gmBlueOnWhite: newColorSet($white, $blue, $midBlue, $lightBlue, $blue, $error);
-$gmGreyOnWhite: newColorSet($white, $darkGrey, $grey, $lightGrey, $blue, $error);
+$gmBlueOnWhite: newColorSet(
+  $container: $white,
+  $high: $blue,
+  $medium: $midBlue,
+  $low: $lightBlue,
+  $accent: $blue,
+  $error: $error
+);
+
+$gmGreyOnWhite: newColorSet(
+  $contaienr: $white,
+  $high: $darkGrey,
+  $medium: $grey,
+  $low: $lightGrey,
+  $accent: $blue,
+  $error: $error
+);

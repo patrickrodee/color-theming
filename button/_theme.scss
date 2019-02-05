@@ -1,6 +1,11 @@
 @import "colors/functions";
 @import "@material/button/mixins";
 
+$textButtonMapping: (
+  ink: highEmphasis,
+  icon: highEmphasis,
+);
+
 $filledButtonMapping: (
   ink: highEmphasis,
   icon: highEmphasis,
@@ -16,6 +21,12 @@ $elevatedButtonMapping: (
   ink: highEmphasis,
   icon: highEmphasis,
 );
+
+@mixin textButton($colorSet, $colorMap: ()) {
+  $map: map-merge($textButtonMapping, $colorMap);
+  @include mdc-button-ink-color(getColor($colorSet, $map, ink));
+  @include mdc-button-icon-color(getColor($colorSet, $map, icon));
+}
 
 @mixin filledButton($colorSet, $colorMap: ()) {
   $map: map-merge($filledButtonMapping, $colorMap);

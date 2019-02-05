@@ -6,6 +6,17 @@
 @include mdc-button(mdc-feature-without(color));
 
 // **********************************
+// TEXT BUTTONS
+// **********************************
+.m-button--text {
+  @include textButton($primaryOnWhite);
+}
+
+.gm-button--text {
+  @include textButton($gmBlueOnWhite);
+}
+
+// **********************************
 // FILLED BUTTONS
 // **********************************
 
