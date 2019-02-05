@@ -1,0 +1,5 @@
+@mixin includeIfExists($map, $key) {
+  @if (map-has-key($map, $key) {
+    @content
+  }
+}

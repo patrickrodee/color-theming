@@ -1,4 +1,5 @@
 @import "colors/functions";
+@import "colors/mixins";
 @import "@material/button/mixins";
 @import "@material/elevation/mixins";
 @import "@material/ripple/mixins";
@@ -26,6 +27,7 @@ $elevatedButtonMapping: (
 
 @mixin textButton($colorSet, $colorMap: ()) {
   $map: map-merge($textButtonMapping, $colorMap);
+  @
   @include mdc-button-ink-color(getColor($colorSet, $map, ink));
   @include mdc-button-icon-color(getColor($colorSet, $map, icon));
   @include mdc-states(getColor($colorSet, $map, ink));
