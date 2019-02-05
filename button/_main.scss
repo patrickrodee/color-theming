@@ -41,6 +41,12 @@
   @include outlinedButton($primaryOnWhite);
 }
 
+.m-button--outlined--aligned {
+  @include outlinedButton($primaryOnWhite, (
+    outline: lowEmphasis,
+  ));
+}
+
 // Changes to color set and color mapping
 .gm-button--outlined {
   @include outlinedButton($gmGreyOnWhite, (
