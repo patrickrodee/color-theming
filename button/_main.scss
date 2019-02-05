@@ -5,9 +5,25 @@
 
 @include mdc-button(mdc-feature-without(color));
 
+// **********************************
+// FILLED BUTTONS
+// **********************************
+
+.m-button--filled {
+  @include filledButton($whiteOnPrimary);
+}
+
 // Only changes to color set
 .gm-button--filled {
   @include filledButton($gmWhiteOnBlue);
+}
+
+// **********************************
+// ELEVATED BUTTONS
+// **********************************
+
+.m-button--elevated {
+  @include filledButton($whiteOnPrimary);
 }
 
 // Only changes to color set
@@ -15,9 +31,14 @@
   @include filledButton($gmBlueOnWhite);
 }
 
+
+// **********************************
+// OUTLINED BUTTONS
+// **********************************
+
 // Baseline
 .m-button--outlined {
-  @include outlinedButton($whiteOnPrimary);
+  @include outlinedButton($primaryOnWhite);
 }
 
 // Changes to color set and color mapping

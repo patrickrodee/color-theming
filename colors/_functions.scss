@@ -1,4 +1,4 @@
-@function newColorSet($container, $high, $medium: rgba($high, 60%), $low: rgba($high, 38%), $accent: $high, $error, red) {
+@function newColorSet($container, $high, $medium, $low, $accent, $error) {
   @return (
     container: $container,
     high: $high,
