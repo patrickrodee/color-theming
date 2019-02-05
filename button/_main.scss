@@ -4,12 +4,19 @@
 
 @include mdc-button(mdc-feature-without(color));
 
+// Only changes to color set
 .button--filled {
   @include filledButton($whiteOnBlue);
 }
 
+// Only changes to color set
+.button--elevated {
+  @include filledButton($blueOnWhite);
+}
+
+// Changes to color set and color mapping
 .button--outlined {
-  @include outlinedButton($blueOnWhite, (
+  @include outlinedButton($greyOnWhite, (
     ink: accent,
     outline: lowEmphasis,
   ));

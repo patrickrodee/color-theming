@@ -13,8 +13,20 @@ $outlinedButtonMapping: (
   container: transparent,
 );
 
+$elevatedButtonMapping: (
+  ink: highEmphasis,
+  icon: highEmphasis,
+);
+
 @mixin filledButton($colorSet, $colorMap: ()) {
   $map: map-merge($filledButtonMapping, $colorMap);
+  @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
+  @include mdc-button-ink-color(getColor($colorSet, $map, ink));
+  @include mdc-button-icon-color(getColor($colorSet, $map, icon));
+}
+
+@mixin elevatedButton($colorSet, $colorMap: ()) {
+  $map: map-merge($elevatedButtonMapping, $colorMap);
   @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
   @include mdc-button-ink-color(getColor($colorSet, $map, ink));
   @include mdc-button-icon-color(getColor($colorSet, $map, icon));
