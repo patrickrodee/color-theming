@@ -5,20 +5,20 @@
 @import "@material/ripple/mixins";
 
 $textButtonMapping: (
-  ink: high,
+  ink: accent,
 );
 
 $filledButtonMapping: (
-  ink: high,
+  ink: accent,
 );
 
 $outlinedButtonMapping: (
-  ink: high,
+  ink: accent,
   outline: high,
 );
 
 $elevatedButtonMapping: (
-  ink: high,
+  ink: accent,
 );
 
 @mixin textButton($colorSet, $colorMap: $textButtonMapping) {

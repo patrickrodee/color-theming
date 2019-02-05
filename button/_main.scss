@@ -17,7 +17,9 @@
 }
 
 .gm-button--text--grey {
-  @include textButton($gmGreyOnWhite);
+  @include textButton($gmGreyOnWhite, (
+    ink: high,
+  ));
 }
 
 // **********************************
@@ -59,7 +61,6 @@
 // Aligned w/ GM via a mapping change from "high" outline to "low"
 .m-button--outlined--aligned {
   @include outlinedButton($primaryOnWhite, (
-    ink: accent,
     outline: low,
   ));
 }
@@ -67,7 +68,7 @@
 // Changes to color set and color mapping
 .gm-button--outlined {
   @include outlinedButton($gmGreyOnWhite, (
-    ink: accent,
     outline: low,
+    ink: accent,
   ));
 }
