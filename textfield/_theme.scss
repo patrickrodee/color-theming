@@ -1,3 +1,33 @@
 @import "colors/functions";
 @import "colors/mixins";
 @import "@material/textfield/mixins";
+
+$filledTextFieldMapping: (
+  ink: high,
+  outline: medium,
+);
+
+@mixin filledTextField($colorSet, $colorMap: $filledTextFieldMapping) {
+  @include mdc-text-field-fill-color(ColorSet_getContainer($colorSet));
+
+  @include ifColorMapHasKey($colorMap, ink) {
+    @include mdc-text-field-ink-color(getColor($colorSet, $colorMap, ink));
+    @include mdc-states(getColor($colorSet, $colorMap, ink));
+  }
+  
+  @include ifColorMapHasKey($colorMap, outline) {
+    @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, ink));
+  }
+
+//   @include ifColorMapHasKey($colorMap, icon) {
+//     @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
+//   }
+//   @include ifColorMapHasKey($colorMap, ink) {
+//     @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
+//     @include mdc-states(getColor($colorSet, $colorMap, ink));
+//   }
+
+//   @include ifColorMapHasKey($colorMap, icon) {
+//     @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
+//   }
+}

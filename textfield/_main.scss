@@ -1,1 +1,11 @@
 @import "@material/textfield/mdc-text-field";
+@import "colors/gm_theme";
+@import "colors/theme";
+@import "textfield/theme";
+
+// **********************************
+// FILLED TEXT FIELD
+// **********************************
+.gm-text-field--filled {
+  @include filledTextField($gmGreyOnGrey);
+}
