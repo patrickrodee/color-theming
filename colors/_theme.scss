@@ -13,8 +13,8 @@ $blackOnWhite: newColorSet(
 $primaryOnWhite: newColorSet(
   $container: $white,
   $high: $purple,
-  $medium: rgba($purple, 60%),
-  $low: rgba($purple, 38%),
+  $medium: rgba($purple, .6),
+  $low: rgba($purple, .38),
   $accent: $purple,
   $error: $error
 );
@@ -22,8 +22,8 @@ $primaryOnWhite: newColorSet(
 $whiteOnPrimary: newColorSet(
   $container: $purple,
   $high: $white,
-  $medium: rgba($white, 60%),
-  $low: rgba($white, 38%),
+  $medium: rgba($white, .6),
+  $low: rgba($white, .38),
   $accent: $white,
   $error: $error
 );

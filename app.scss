@@ -8,6 +8,16 @@
 // @import "@material/button/mdc-button";
 @import "button/main";
 
+.tbl {
+  width: 100%;
+  
+  &__heading {
+    @include mdc-typography(headline3); 
+
+    text-align: left;
+  }
+}
+
 // This sets all <h1>,...,<h6> elements with Material headline1,...,headline6 typography styles
 // Check out the MDC Web documentation for how to use MDC Typography Sass mixins:
 // https://github.com/material-components/material-components-web/tree/master/packages/mdc-typography
