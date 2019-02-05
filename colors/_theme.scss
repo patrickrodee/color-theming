@@ -1,20 +1,11 @@
 @import './functions';
 @import './variables';
 
-$blackOnWhite: newColorSet(
+$blackOnWhiteWithPrimary: newColorSet(
   $container: $white,
   $high: $black,
   $medium: $darkGrey,
   $low: $lightGrey,
-  $accent: $purple,
-  $error: $error
-);
-
-$primaryOnWhite: newColorSet(
-  $container: $white,
-  $high: $purple,
-  $medium: rgba($purple, .6),
-  $low: rgba($purple, .38),
   $accent: $purple,
   $error: $error
 );

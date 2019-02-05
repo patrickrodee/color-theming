@@ -9,7 +9,7 @@
 // TEXT BUTTONS
 // **********************************
 .m-button--text {
-  @include textButton($primaryOnWhite);
+  @include textButton($blackOnWhiteWithPrimary);
 }
 
 .gm-button--text {
@@ -55,7 +55,7 @@
 
 // Baseline
 .m-button--outlined {
-  @include outlinedButton($primaryOnWhite);
+  @include outlinedButton($blackOnWhiteWithPrimary);
 }
 
 $gmOutlinedButtonMapping: extendedColorMap($elevatedButtonMapping, (
@@ -64,7 +64,7 @@ $gmOutlinedButtonMapping: extendedColorMap($elevatedButtonMapping, (
 
 // Aligned w/ GM via a mapping change from "high" outline to "low"
 .m-button--outlined--aligned {
-  @include outlinedButton($primaryOnWhite, $gmOutlinedButtonMapping);
+  @include outlinedButton($blackOnWhiteWithPrimary, $gmOutlinedButtonMapping);
 }
 
 // Changes to color set and color mapping
