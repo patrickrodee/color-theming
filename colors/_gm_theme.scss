@@ -2,28 +2,28 @@
 @import './gm_variables';
 
 $gmWhiteOnBlue: newColorSet(
-  $container: $blue,
+  $container: $blue600,
   $high: $white,
-  $medium: $lightBlue,
-  $low: $midBlue,
+  $medium: $blue50,
+  $low: $blue100,
   $accent: $white,
-  $error: $error
+  $error: $red700
 );
 
 $gmBlueOnWhite: newColorSet(
   $container: $white,
-  $high: $blue,
-  $medium: $midBlue,
-  $low: $lightBlue,
-  $accent: $blue,
-  $error: $error
+  $high: $blue600,
+  $medium: $blue100,
+  $low: $blue50,
+  $accent: $blue600,
+  $error: $red700
 );
 
 $gmGreyOnWhite: newColorSet(
   $container: $white,
-  $high: $darkGrey,
-  $medium: $grey,
-  $low: $lightGrey,
-  $accent: $blue,
-  $error: $error
+  $high: $grey800,
+  $medium: $grey700,
+  $low: $grey300,
+  $accent: $blue600,
+  $error: $red700
 );
