@@ -9,6 +9,10 @@
   );
 }
 
+@function extendColorSet($colorSet, $container, $high, $medium, $low, $accent, $error) {
+  @return newColorSet($container, $high, $medium, $low, $accent, $error)
+}
+
 @function ColorSet_getContainer($colorSet) {
   @return map-get($colorSet, container);
 }

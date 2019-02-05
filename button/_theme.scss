@@ -56,3 +56,16 @@ $elevatedButtonMapping: (
   @include mdc-button-outline-color(getColor($colorSet, $map, outline));
   @include mdc-states(getColor($colorSet, $map, ink));
 }
+
+@mixin statefulOutlinedButton($colorSet, $colorMap: ()) {
+  $map: map-merge($outlinedButtonMapping, $colorMap);
+  &::hover,
+  &::active,
+  &::focus {
+    @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
+    @include mdc-button-ink-color(getColor($colorSet, $map, ink));
+    @include mdc-button-icon-color(getColor($colorSet, $map, icon));
+    @include mdc-button-outline-color(getColor($colorSet, $map, outline));
+    @include mdc-states(getColor($colorSet, $map, ink));
+  }
+}
