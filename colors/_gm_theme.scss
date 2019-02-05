@@ -1,0 +1,6 @@
+@import './functions';
+@import './gm_variables';
+
+$gmWhiteOnBlue: newColorSet($blue, $white, $lightBlue, $midBlue, $white, $error);
+$gmBlueOnWhite: newColorSet($white, $blue, $midBlue, $lightBlue, $blue, $error);
+$gmGreyOnWhite: newColorSet($white, $darkGrey, $grey, $lightGrey, $blue, $error);
