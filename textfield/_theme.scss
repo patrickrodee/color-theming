@@ -4,36 +4,36 @@
 @import "@material/floating-label/mixins";
 
 $filledTextFieldMapping: (
-  ink: high,
-  bottomLine: medium,
-  helperText: medium,
-  textLabel: medium,
-  icon: medium,
-  caret: accent,
-  activeBottomLine: accent,
-  activeHelperText: accent,
-  activeTextLabel: accent,
-  errorBottomLine: error,
-  errorHelperText: error,
-  errorTextLabel: error,
-  errorCaret: error,
+  ink:               high,
+  bottomLine:        medium,
+  helperText:        medium,
+  textLabel:         medium,
+  icon:              medium,
+  caret:             accent,
+  activeBottomLine:  accent,
+  activeHelperText:  accent,
+  activeTextLabel:   accent,
+  errorBottomLine:   error,
+  errorHelperText:   error,
+  errorTextLabel:    error,
+  errorCaret:        error,
 );
 
 $outlinedTextFieldMapping: (
-  ink: high,
-  outline: low,
-  helperText: medium,
-  textLabel: medium,
-  icon: medium,
-  caret: accent,
-  hoverOutline: low, // Purely an exception to make outline not change on hover in GM. 
-  activeOutline: accent,
-  activeHelperText: accent,
-  activeTextLabel: accent,
-  errorOutline: error,
-  errorHelperText: error,
-  errorTextLabel: error,
-  errorCaret: error,
+  ink:               high,
+  outline:           low,
+  helperText:        medium,
+  textLabel:         medium,
+  icon:              medium,
+  caret:             accent,
+  hoverOutline:      low, // Purely an exception to make outline not change on hover in GM. 
+  activeOutline:     accent,
+  activeHelperText:  accent,
+  activeTextLabel:   accent,
+  errorOutline:      error,
+  errorHelperText:   error,
+  errorTextLabel:    error,
+  errorCaret:        error,
 );
 
 @mixin filledTextField($colorSet, $colorMap: $filledTextFieldMapping) {
