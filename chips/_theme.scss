@@ -21,6 +21,6 @@ $inputChipMapping: (
   }
   
   @include ifColorMapHasKey($colorMap, outline) {
-    @include mdc-chip-outline($color: getColor($colorSet, $colorMap, outline));
+    @include mdc-chip-outline($width: 1px, $color: getColor($colorSet, $colorMap, outline));
   }
 }
