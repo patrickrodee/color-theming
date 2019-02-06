@@ -10,8 +10,8 @@ $filledTextFieldMapping: (
   textLabel: medium,
   caret: accent,
   activeBottomLine: accent,
-  activeTextLabel: accent,
   activeHelperText: accent,
+  activeTextLabel: accent,
 );
 
 $outlinedTextFieldMapping: (
@@ -20,10 +20,10 @@ $outlinedTextFieldMapping: (
   helperText: medium,
   textLabel: medium,
   caret: accent,
-  hoverOutline: low,
+  hoverOutline: low, // Mostly an exception to make GM behave like M
   activeOutline: accent,
-  activeTextLabel: accent,
   activeHelperText: accent,
+  activeTextLabel: accent,
 );
 
 @mixin filledTextField($colorSet, $colorMap: $filledTextFieldMapping) {
