@@ -8,6 +8,7 @@ $filledTextFieldMapping: (
   bottomLine: medium,
   helperText: medium,
   textLabel: medium,
+  icon: medium,
   caret: accent,
   activeBottomLine: accent,
   activeHelperText: accent,
@@ -19,6 +20,7 @@ $outlinedTextFieldMapping: (
   outline: low,
   helperText: medium,
   textLabel: medium,
+  icon: medium,
   caret: accent,
   hoverOutline: low, // Mostly an exception to make GM behave like M
   activeOutline: accent,
@@ -44,6 +46,10 @@ $outlinedTextFieldMapping: (
   
   @include ifColorMapHasKey($colorMap, textLabel) {
     @include mdc-text-field-label-color(getColor($colorSet, $colorMap, textLabel));
+  }
+  
+  @include ifColorMapHasKey($colorMap, icon) {
+    @include mdc-text-field-icon-color(getColor($colorSet, $colorMap, icon));
   }
   
   @include ifColorMapHasKey($colorMap, activeBottomLine) {
@@ -79,6 +85,10 @@ $outlinedTextFieldMapping: (
   
   @include ifColorMapHasKey($colorMap, textLabel) {
     @include mdc-text-field-label-color(getColor($colorSet, $colorMap, textLabel));
+  }
+  
+  @include ifColorMapHasKey($colorMap, icon) {
+    @include mdc-text-field-icon-color(getColor($colorSet, $colorMap, icon));
   }
   
   @include ifColorMapHasKey($colorMap, caret) {
