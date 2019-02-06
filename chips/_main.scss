@@ -2,3 +2,7 @@
 @import "colors/gm_theme";
 @import "colors/theme";
 @import "chips/theme";
+
+.gm-chip--filter {
+  @include inputChip($gmGreyOnWhite);
+}

@@ -4,10 +4,23 @@
 @import "@material/ripple/mixins";
 
 $inputChipMapping: (
-  ink:     accent,
+  ink:     high,
+  trailingIcon: high,
+  outline: low,
 );
 
 @mixin inputChip($colorSet, $colorMap: $inputChipMapping) {
-  @i
+  @include mdc-chip-fill-color(ColorSet_getContainer($colorSet));
   
+  @include ifColorMapHasKey($colorMap, ink) {
+    @include mdc-chip-ink-color(getColor($colorSet, $colorMap, ink));
+  }
+  
+  @include ifColorMapHasKey($colorMap, trailingIcon) {
+    @include mdc-chip-trailing-icon-color(getColor($colorSet, $colorMap, trailingIcon));
+  }
+  
+  @include ifColorMapHasKey($colorMap, outline) {
+    @include mdc-chip-outline-color(getColor($colorSet, $colorMap, outline));
+  }
 }
