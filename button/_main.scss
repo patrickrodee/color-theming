@@ -37,12 +37,6 @@
   @include filledButton($gmWhiteOnBlue);
 }
 
-.dark-mode {
-  .gm-button--filled {
-    @include filledButton($gmDarkThemeWhiteOnBlue);
-  }
-}
-
 // **********************************
 // ELEVATED BUTTONS
 // **********************************
