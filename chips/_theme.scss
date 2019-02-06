@@ -3,3 +3,11 @@
 @import "@material/chips/mixins";
 @import "@material/ripple/mixins";
 
+$inputChipMapping: (
+  ink:     accent,
+);
+
+@mixin inputChip($colorSet, $colorMap: $inputChipMapping) {
+  @i
+  
+}
