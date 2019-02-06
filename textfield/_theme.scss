@@ -13,6 +13,9 @@ $filledTextFieldMapping: (
   activeBottomLine: accent,
   activeHelperText: accent,
   activeTextLabel: accent,
+  errorBottomLine: error,
+  errorHelperText: error,
+  errorTextLabel: error,
 );
 
 $outlinedTextFieldMapping: (
@@ -22,10 +25,13 @@ $outlinedTextFieldMapping: (
   textLabel: medium,
   icon: medium,
   caret: accent,
-  hoverOutline: low, // Mostly an exception to make GM behave like M
+  hoverOutline: low, // Purely an exception to make outline not change on hover in GM. 
   activeOutline: accent,
   activeHelperText: accent,
   activeTextLabel: accent,
+  errorOutline: error,
+  errorHelperText: error,
+  errorTextLabel: error,
 );
 
 @mixin filledTextField($colorSet, $colorMap: $filledTextFieldMapping) {
@@ -52,12 +58,12 @@ $outlinedTextFieldMapping: (
     @include mdc-text-field-icon-color(getColor($colorSet, $colorMap, icon));
   }
   
-  @include ifColorMapHasKey($colorMap, activeBottomLine) {
-    @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, activeBottomLine));
-  }
-  
   @include ifColorMapHasKey($colorMap, caret) {
     @include mdc-text-field-caret-color(getColor($colorSet, $colorMap, caret));
+  }
+  
+  @include ifColorMapHasKey($colorMap, activeBottomLine) {
+    @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, activeBottomLine));
   }
   
   &.mdc-text-field--focused {
@@ -105,6 +111,12 @@ $outlinedTextFieldMapping: (
   
   @include ifColorMapHasKey($colorMap, activeOutline) {
     @include mdc-text-field-focused-outline-color(getColor($colorSet, $colorMap, activeOutline));
+  }
+  
+  &.mdc-text-field--invalid {
+    @include ifColorMapHasKey($colorMap, errorOutline) {
+      @include mdc-text-field-outline-color(getColor($colorSet, $colorMap, errorOutline));
+    }
   }
   
   &.mdc-text-field--focused {
