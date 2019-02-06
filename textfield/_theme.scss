@@ -117,6 +117,12 @@ $outlinedTextFieldMapping: (
     @include ifColorMapHasKey($colorMap, errorOutline) {
       @include mdc-text-field-outline-color(getColor($colorSet, $colorMap, errorOutline));
     }
+    
+    &.mdc-text-field--focused {
+      @include ifColorMapHasKey($colorMap, errorTextLabel) {
+        @include mdc-text-field-label-color(getColor($colorSet, $colorMap, errorTextLabel));
+      }
+    }
   }
   
   &.mdc-text-field--focused {
