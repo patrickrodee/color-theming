@@ -20,3 +20,7 @@
 .gm-text-field--outlined {
   @include outlinedTextField($gmGreyOnWhite);
 }
+
+.m-text-field--outlined {
+  @include outlinedTextField($blackOnGreyWithPrimary);
+}

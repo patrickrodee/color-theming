@@ -2,7 +2,6 @@
 @import "colors/mixins";
 @import "@material/textfield/mixins";
 @import "@material/floating-label/mixins";
-@import "@material/notched-outline/mixins";
 
 $filledTextFieldMapping: (
   ink: high,
@@ -87,7 +86,7 @@ $outlinedTextFieldMapping: (
   }
   
   @include ifColorMapHasKey($colorMap, outline) {
-    @include mdc-notched-outline-color(getColor($colorSet, $colorMap, outline));
+    @include mdc-text-field-outline-color(getColor($colorSet, $colorMap, outline));
   }
   
   @include ifColorMapHasKey($colorMap, hoverOutline) {
