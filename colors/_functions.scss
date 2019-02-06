@@ -64,3 +64,9 @@
     @return ColorSet_getError($colorSet);
   }
 }
+
+@function opacifyWithBackground($color, $background: #fff) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  @return mix($opaque, $background, $percent);
+}

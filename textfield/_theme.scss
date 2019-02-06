@@ -79,6 +79,12 @@ $outlinedTextFieldMapping: (
       }
     }
   }
+  
+  &.mdc-text-field--invalid {
+    @include ifColorMapHasKey($colorMap, errorCaret) {
+      @include mdc-text-field-caret-color(getColor($colorSet, $colorMap, errorCaret));
+    }
+  }
 }
 
 @mixin outlinedTextField($colorSet, $colorMap: $outlinedTextFieldMapping) {
@@ -126,6 +132,10 @@ $outlinedTextFieldMapping: (
     
     @include ifColorMapHasKey($colorMap, errorTextLabel) {
       @include mdc-text-field-label-color(getColor($colorSet, $colorMap, errorTextLabel));
+    }
+    
+    @include ifColorMapHasKey($colorMap, errorCaret) {
+      @include mdc-text-field-caret-color(getColor($colorSet, $colorMap, errorCaret));
     }
     
     &.mdc-text-field--focused {
