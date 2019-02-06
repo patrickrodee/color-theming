@@ -1,5 +1,6 @@
 @import "@material/button/mixins";
 @import "colors/gm_theme";
+@import "colors/gm_dark_theme";
 @import "colors/functions";
 @import "colors/theme";
 @import "button/theme";
@@ -34,6 +35,12 @@
 // Only changes to color set
 .gm-button--filled {
   @include filledButton($gmWhiteOnBlue);
+}
+
+.dark-mode {
+  .gm-button--filled {
+    @include filledButton($gmDarkThemeWhiteOnBlue);
+  }
 }
 
 // **********************************
