@@ -29,7 +29,11 @@
     "@material/typography": "^0.44.0",
     "@material/textfield": "^0.44.0",
     "@material/floating-label": "^0.44.0",
-    "@material/notched-outline": "^0.44.0"
+    "@material/notched-outline": "^0.44.0",
+    "@materia/tab": "^0.44.0",
+    "@materia/tab-bar": "^0.44.0",
+    "@materia/tab-indicator": "^0.44.0",
+    "@materia/tab-scroller": "^0.44.0"
   },
   "engines": {
     "node": "10.x"
