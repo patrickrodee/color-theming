@@ -5,4 +5,5 @@
 
 .gm-chip--input {
   @include inputChip($gmGreyOnWhite);
+  @include selectedInputChip($gmBlueOnBlue);
 }

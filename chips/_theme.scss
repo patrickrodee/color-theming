@@ -24,3 +24,9 @@ $inputChipMapping: (
     @include mdc-chip-outline($width: 1px, $color: getColor($colorSet, $colorMap, outline));
   }
 }
+
+@mixin selectedInputChip($colorSet, $colorMap) {
+  &.mdc-chip--selected {
+    @include inputChip($colorSet, $colorMap);
+  }
+}

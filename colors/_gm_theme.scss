@@ -36,3 +36,12 @@ $gmGreyOnGrey: newColorSet(
   $accent: $blue600,
   $error: $red700
 );
+
+$gmBlueOnBlue: newColorSet(
+  $container: $blue50,
+  $high: $blue700,
+  $medium: $blue500,
+  $low: $blue300,
+  $accent: $blue700,
+  $error: $red700
+);
