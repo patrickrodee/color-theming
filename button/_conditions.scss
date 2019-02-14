@@ -1,0 +1,40 @@
+@import "mapping";
+@import "theme";
+@import "themes/gm/color_sets";
+@import "themes/m/color_sets";
+
+.button {
+  &__text {
+    &--gm {
+      @include defaultTextButton($micro_gmBlue600OnWhite);
+      @include disabledTextButton($micro_gmDisabledColorSet);
+      &--grey {
+        @include defaultTextButton($micro_gmGrey800OnWhite, (
+          ink:  high,
+        ));
+        @include disabledTextButton($micro_gmDisabledColorSet);
+      }
+    }
+  }
+
+  &__filled {
+    &--gm {
+      @include defaultFilledButton($micro_gmWhiteOnBlue600);
+      @include disabledFilledButton($micro_gmDisabledColorSet);
+    }
+  }
+
+  &__raised {
+    &--gm {
+      @include defaultRaisedButton($micro_gmBlue600OnWhite);
+      @include disabledRaisedButton($micro_gmDisabledColorSet);
+    }
+  }
+
+  &__outlined {
+    &--gm {
+      @include defaultOutlinedButton($micro_gmGrey700OnWhiteWithBlue600);
+      @include disabledOutlinedButton($micro_gmDisabledColorSet);
+    }
+  }
+}

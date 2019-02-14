@@ -1,0 +1,78 @@
+@import "mapping";
+@import "colors/functions";
+@import "colors/mixins";
+@import "@material/tab/mixins";
+@import "@material/tab-indicator/mixins";
+@import "@material/ripple/mixins";
+
+@mixin tab($colorSet, $colorMap: $tabMapping) {
+  // Overriding some silly stuff that I am 100% to blame for
+  .mdc-tab__text-label,
+  .mdc-tab__icon {
+    opacity: 1;
+  }
+
+  @include ifColorMapHasKey($colorMap, ink) {
+    @include mdc-tab-text-label-color(getColor($colorSet, $colorMap, ink));
+
+    .mdc-tab__ripple {
+      @include mdc-states(getColor($colorSet, $colorMap, ink));
+    }
+  }
+
+  @include ifColorMapHasKey($colorMap, icon) {
+    @include mdc-tab-icon-color(getColor($colorSet, $colorMap, icon));
+  }
+
+  @include ifColorMapHasKey($colorMap, activeIndicator) {
+    .mdc-tab-indicator {
+      @include mdc-tab-indicator-underline-color(getColor($colorSet, $colorMap, activeIndicator));
+    }
+  }
+
+  .mdc-tab--active {
+    @include ifColorMapHasKey($colorMap, activeInk) {
+      @include mdc-tab-text-label-color(getColor($colorSet, $colorMap, activeInk));
+
+      .mdc-tab__ripple {
+        @include mdc-states(getColor($colorSet, $colorMap, activeInk));
+      }
+    }
+
+    @include ifColorMapHasKey($colorMap, activeIcon) {
+      @include mdc-tab-icon-color(getColor($colorSet, $colorMap, activeIcon));
+    }
+  }
+}
+
+@mixin defaultTab($colorSet, $colorMap: $defaultTabMapping) {
+  // Overriding some silly stuff that I am 100% to blame for
+  .mdc-tab__text-label,
+  .mdc-tab__icon {
+    opacity: 1;
+  }
+
+  @include ifColorMapHasKey($colorMap, ink) {
+    @include mdc-tab-text-label-color(getColor($colorSet, $colorMap, ink));
+
+    .mdc-tab__ripple {
+      @include mdc-states(getColor($colorSet, $colorMap, ink));
+    }
+  }
+
+  @include ifColorMapHasKey($colorMap, icon) {
+    @include mdc-tab-icon-color(getColor($colorSet, $colorMap, icon));
+  }
+
+  @include ifColorMapHasKey($colorMap, indicator) {
+    .mdc-tab-indicator {
+      @include mdc-tab-indicator-underline-color(getColor($colorSet, $colorMap, indicator));
+    }
+  }
+}
+
+@mixin activeTab($colorSet, $colorMap: $activeTabMapping) {
+  .mdc-tab--active {
+    @include defaultTab($colorSet, $colorMap);
+  }
+}

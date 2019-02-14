@@ -1,0 +1,21 @@
+@import "mapping";
+@import "colors/functions";
+@import "themes/gm/color_sets";
+@import "themes/m/color_sets";
+@import "textfield/theme";
+
+.textfield {
+  &__outlined {
+    &--gm {
+      @include defaultOutlinedTextField($micro_gmGrey700OnWhiteWithBlue600);
+      @include errorOutlinedTextField($micro_gmGrey700OnWhiteWithRed600);
+    }
+  }
+
+  &__filled {
+    &--gm {
+      @include defaultFilledTextField($micro_gmGrey900OnGrey50WithBlue600);
+      @include errorFilledTextField($micro_gmGrey900OnGrey50WithRed600);
+    }
+  }
+}

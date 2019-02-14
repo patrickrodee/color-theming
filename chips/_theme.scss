@@ -1,13 +1,8 @@
+@import "mapping";
 @import "colors/functions";
 @import "colors/mixins";
 @import "@material/chips/mixins";
 @import "@material/ripple/mixins";
-
-$inputChipMapping: (
-  ink:     medium,
-  trailingIcon: medium,
-  outline: low,
-);
 
 @mixin inputChip($colorSet, $colorMap: $inputChipMapping) {
   @include mdc-chip-fill-color(ColorSet_getContainer($colorSet));

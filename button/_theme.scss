@@ -1,25 +1,9 @@
+@import "mapping";
 @import "colors/functions";
 @import "colors/mixins";
 @import "@material/button/mixins";
 @import "@material/elevation/mixins";
 @import "@material/ripple/mixins";
-
-$textButtonMapping: (
-  ink:     accent,
-);
-
-$filledButtonMapping: (
-  ink:     accent,
-);
-
-$outlinedButtonMapping: (
-  ink:     accent,
-  outline: accent,
-);
-
-$elevatedButtonMapping: (
-  ink:     accent,
-);
 
 @mixin textButton($colorSet, $colorMap: $textButtonMapping) {
   @include ifColorMapHasKey($colorMap, ink) {
@@ -108,3 +92,135 @@ $elevatedButtonMapping: (
   }
 }
 
+// *****************************************************************************
+// Discrete theming methods per condition
+// *****************************************************************************
+
+// Default Text Button
+@mixin defaultTextButton($colorSet, $colorMap: $defaultTextButtonMapping) {
+  @include ifColorMapHasKey($colorMap, ink) {
+    @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
+    @include mdc-states(getColor($colorSet, $colorMap, ink));
+  }
+
+  @include ifColorMapHasKey($colorMap, icon) {
+    @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
+  }
+}
+
+// Disabled Text Button
+@mixin disabledTextButton($colorSet, $colorMap: $disabledTextButtonMapping) {
+  &:disabled {
+    @include ifColorMapHasKey($colorMap, ink) {
+      color: getColor($colorSet, $colorMap, ink);
+    }
+
+    .mdc-button__icon {
+      @include ifColorMapHasKey($colorMap, icon) {
+        color: getColor($colorSet, $colorMap, icon);
+      }
+    }
+  }
+}
+
+// Default Filled Button
+@mixin defaultFilledButton($colorSet, $colorMap: $defaultFilledButtonMapping) {
+  @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
+
+  @include ifColorMapHasKey($colorMap, ink) {
+    @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
+    @include mdc-states(getColor($colorSet, $colorMap, ink));
+  }
+
+  @include ifColorMapHasKey($colorMap, icon) {
+    @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
+  }
+}
+
+// Disabled Filled Button
+@mixin disabledFilledButton($colorSet, $colorMap: $disabledFilledButtonMapping) {
+  &:disabled {
+    background-color: ColorSet_getContainer($colorSet);
+
+    @include ifColorMapHasKey($colorMap, ink) {
+      color: getColor($colorSet, $colorMap, ink);
+    }
+
+    .mdc-button__icon {
+      @include ifColorMapHasKey($colorMap, icon) {
+        color: getColor($colorSet, $colorMap, icon);
+      }
+    }
+  }
+}
+
+// Default Raised Button
+@mixin defaultRaisedButton($colorSet, $colorMap: $defaultRaisedButtonMapping) {
+  @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
+  @include mdc-elevation(2);
+  
+  @include ifColorMapHasKey($colorMap, ink) {
+    @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
+    @include mdc-states(getColor($colorSet, $colorMap, ink));
+  }
+  
+  @include ifColorMapHasKey($colorMap, icon) {
+    @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
+  }
+}
+
+// Disabled Raised Button
+@mixin disabledRaisedButton($colorSet, $colorMap: $disabledRaisedButtonMapping) {
+  &:disabled {
+    background-color: ColorSet_getContainer($colorSet);
+
+    @include ifColorMapHasKey($colorMap, ink) {
+      color: getColor($colorSet, $colorMap, ink);
+    }
+
+    .mdc-button__icon {
+      @include ifColorMapHasKey($colorMap, icon) {
+        color: getColor($colorSet, $colorMap, icon);
+      }
+    }
+  }
+}
+
+// Default Outlined Button
+@mixin defaultOutlinedButton($colorSet, $colorMap: $defaultOutlinedButtonMapping) {
+  // @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
+  
+  @include ifColorMapHasKey($colorMap, ink) {
+    @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
+    @include mdc-states(getColor($colorSet, $colorMap, ink));
+  }
+  
+  @include ifColorMapHasKey($colorMap, icon) {
+    @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
+  }
+  
+  @include ifColorMapHasKey($colorMap, outline) {
+    @include mdc-button-outline-color(getColor($colorSet, $colorMap, outline));
+  }
+}
+
+// Disabled Raised Button
+@mixin disabledOutlinedButton($colorSet, $colorMap: $disabledOutlinedButtonMapping) {
+  &:disabled {
+    // background-color: ColorSet_getContainer($colorSet);
+
+    @include ifColorMapHasKey($colorMap, ink) {
+      color: getColor($colorSet, $colorMap, ink);
+    }
+
+    @include ifColorMapHasKey($colorMap, outline) {
+      border-color: getColor($colorSet, $colorMap, outline);
+    }
+
+    .mdc-button__icon {
+      @include ifColorMapHasKey($colorMap, icon) {
+        color: getColor($colorSet, $colorMap, icon);
+      }
+    }
+  }
+}

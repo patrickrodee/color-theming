@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Color Theming for the Masses</title>
+    <title>Color Theming for the Masses with Conditions</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- import the Material stylesheet -->
@@ -11,6 +11,11 @@
   <body class="mdc-typography">
     <!-- Apply Material headline3 style to this <h1> element -->
     <h1 class="mdc-typography--headline3">Color Theming Proposal Testing</h1>
+
+    <label>
+      <input type="checkbox" name="disabled" id="disabled" class="disabled-interactive-elements">
+      <span>Disable Interactive Elements</span>
+    </label>
     
     <table class="tbl">
       <tbody>
@@ -18,120 +23,91 @@
           <th></th>
           <th class="tbl__heading">M</th>
           <th class="tbl__heading">GM</th>
-          <th class="tbl__heading">Aligned M/GM</th>
-          <th class="tbl__heading">Notes</th>
         </tr>
         <tr>
           <td class="tbl__cell">Default/Text Button</td>
           <td class="tbl__cell">
-            <button class="mdc-button m-button--text">
+            <button class="mdc-button button__text--m">
               Button
             </button>
           </td>
           <td class="tbl__cell">
-            <button class="mdc-button gm-button--text">
+            <button class="mdc-button button__text--gm">
               Text Button
             </button>
-            <button class="mdc-button gm-button--text--grey">
+            <button class="mdc-button button__text--gm--grey">
               Text Button
             </button>
-          </td>
-          <td class="tbl__cell"></td>
-          <td>
-            Grey text button requires either remapping or a unique color set to account for "Accent" Grey700.
           </td>
         </tr>
         <tr>
           <td class="tbl__cell">Unelevated/Filled Button</td>
           <td class="tbl__cell">
-            <button class="mdc-button mdc-button--unelevated m-button--filled">
+            <button class="mdc-button mdc-button--unelevated button__filled--m">
               Unelevated Button
             </button>
           </td>
           <td class="tbl__cell">
-            <button class="mdc-button mdc-button--unelevated gm-button--filled">
+            <button class="mdc-button mdc-button--unelevated button__filled--gm">
               Filled Button
             </button>
           </td>
-          <td class="tbl__cell"></td>
-          <td>
-            Maps directly with no changes needed
-          </td>
         </tr>
         <tr>
-          <td class="tbl__cell">Elevated/Protected Button</td>
+          <td class="tbl__cell">Raised/Protected Button</td>
           <td class="tbl__cell">
-            <button class="mdc-button mdc-button--raised m-button--elevated">
-              Elevated Button
+            <button class="mdc-button mdc-button--raised button__raised--m">
+              Raised Button
             </button>
           </td>
           <td class="tbl__cell">
-            <button class="mdc-button mdc-button--raised gm-button--elevated">
+            <button class="mdc-button mdc-button--raised button__raised--gm">
               Protected Button
             </button>
           </td>
-          <td class="tbl__cell"></td>
-          <td>Maps directly with no changed needed</td>
         </tr>
         <tr>
           <td class="tbl__cell">Outlined/Hairline Button</td>
           <td class="tbl__cell">
-            <button class="mdc-button mdc-button--outlined m-button--outlined">
+            <button class="mdc-button mdc-button--outlined button__outlined--m">
               Outlined Button
             </button>
           </td>
           <td class="tbl__cell">
-            <button class="mdc-button mdc-button--outlined gm-button--outlined">
+            <button class="mdc-button mdc-button--outlined button__outlined--gm">
               Hairline Button
             </button>
           </td>
-          <td class="tbl__cell">
-            <button class="mdc-button mdc-button--outlined m-button--outlined--aligned">
-              Aligned Button
-            </button>
-          </td>
-          <td>Requires remapping of outline from "Accent" to "Low"</td>
         </tr>
-        <!-- Filled Text Field -->
+
         <tr>
           <td class="tbl__cell">Filled Text Field</td>
           <td class="tbl__cell">
-            <div class="mdc-text-field m-text-field--filled">
-              <input type="text" id="my-text-field1" class="mdc-text-field__input">
+            <div class="mdc-text-field textfield__filled--m">
+              <input type="text" id="my-text-field1" class="mdc-text-field__input" required minlength="8">
               <label class="mdc-floating-label" for="my-text-field1">Text label</label>
               <div class="mdc-line-ripple"></div>
             </div>
             <div class="mdc-text-field-helper-line">
-              <div class="mdc-text-field-helper-text">Helper text</div>
+              <div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">Helper text</div>
             </div>
           </td>
           <td class="tbl__cell">
-            <div class="mdc-text-field gm-text-field--filled">
-              <input type="text" id="my-text-field2" class="mdc-text-field__input">
-              <label class="mdc-floating-label" for="my-text-field2">Text label</label>
-              <div class="mdc-line-ripple"></div>
-            </div>
-            <div class="mdc-text-field-helper-line">
-              <div class="mdc-text-field-helper-text">Helper text</div>
-            </div>
-          </td>
-          <td class="tbl__cell">
-            <div class="mdc-text-field gm-text-field--filled-with-conditions">
+            <div class="mdc-text-field textfield__filled--gm">
               <input type="text" id="my-text-field2" class="mdc-text-field__input" required minlength="8">
               <label class="mdc-floating-label" for="my-text-field2">Text label</label>
               <div class="mdc-line-ripple"></div>
             </div>
             <div class="mdc-text-field-helper-line">
-              <div class="mdc-text-field-helper-text">Helper text</div>
+              <div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">Helper text</div>
             </div>
           </td>
-          <td>Maps directly with no changed needed (with the exception of the custom underline grey)</td>
         </tr>
-        <!-- Outlined Text Field -->
+
         <tr>
           <td class="tbl__cell">Outlined Text Field</td>
           <td class="tbl__cell">
-            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon">
+            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon textfield__outlined--m">
               <i class="material-icons mdc-text-field__icon" tabindex="0" role="button">hot_tub</i>
               <input type="text" id="tf-outlined1" class="mdc-text-field__input" required minlength="8">
               <div class="mdc-notched-outline">
@@ -147,7 +123,7 @@
             </div>
           </td>
           <td class="tbl__cell">
-            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon gm-text-field--outlined">
+            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon textfield__outlined--gm">
               <i class="material-icons mdc-text-field__icon" tabindex="0" role="button">hot_tub</i>
               <input type="text" id="tf-outlined2" class="mdc-text-field__input" required minlength="8">
               <div class="mdc-notched-outline">
@@ -162,24 +138,9 @@
               <div class="mdc-text-field-helper-text">Helper text</div>
             </div>
           </td>
-          <td class="tbl__cell">
-            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon m-text-field--outlined">
-              <i class="material-icons mdc-text-field__icon" tabindex="0" role="button">hot_tub</i>
-              <input type="text" id="tf-outlined3" class="mdc-text-field__input" required minlength="8">
-              <div class="mdc-notched-outline">
-                <div class="mdc-notched-outline__leading"></div>
-                <div class="mdc-notched-outline__notch">
-                  <label for="tf-outlined3" class="mdc-floating-label">Your Name</label>
-                </div>
-                <div class="mdc-notched-outline__trailing"></div>
-              </div>
-            </div>
-            <div class="mdc-text-field-helper-line">
-              <div class="mdc-text-field-helper-text">Helper text</div>
-            </div>
-          </td>
         </tr>
-        <!-- Input Chips Text Field -->
+
+        <!--
         <tr>
           <td class="tbl__cell">Input Chips</td>
           <td class="tbl__cell">
@@ -211,7 +172,6 @@
           </td>
         </tr>
 
-        <!-- Tabs -->
         <tr>
           <td class="tbl__cell">Tabs</td>
           <td class="tbl__cell">
@@ -276,7 +236,6 @@
           </td>
         </tr>
 
-        <!--  List -->
         <tr>
           <td class="tbl__cell">Single Selection List</td>
           <td class="tbl__cell">
@@ -348,7 +307,7 @@
               </ul>
             </div>
           </td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
     

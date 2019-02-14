@@ -1,0 +1,65 @@
+$textButtonMapping: (
+  ink:        accent,
+);
+
+$filledButtonMapping: (
+  ink:        accent,
+);
+
+$outlinedButtonMapping: (
+  ink:        accent,
+  outline:    accent,
+);
+
+$elevatedButtonMapping: (
+  ink:        accent,
+);
+
+// *****************************************************************************
+// Discrete theming mappings per condition
+// *****************************************************************************
+
+// Text Button
+$defaultTextButtonMapping: (
+  ink:    accent,
+  icon:   accent,
+);
+
+$disabledTextButtonMapping: (
+  ink:    medium,
+  icon:   medium,
+);
+
+// Filled Button
+$defaultFilledButtonMapping: (
+  ink:    accent,
+  icon:   accent,
+);
+
+$disabledFilledButtonMapping: (
+  ink:    medium,
+  icon:   medium,
+);
+
+// Raised Button
+$defaultRaisedButtonMapping: (
+  ink:    accent,
+  icon:   accent,
+);
+
+$disabledRaisedButtonMapping: (
+  ink:    medium,
+  icon:   medium,
+);
+
+// Outlined Button
+$defaultOutlinedButtonMapping: (
+  ink:      accent,
+  icon:     accent,
+  outline:  low,
+);
+
+$disabledOutlinedButtonMapping: extendedColorMap($defaultOutlinedButtonMapping, (
+  ink:      medium,
+  icon:     medium,
+));

@@ -1,0 +1,81 @@
+@import "../themes/gm/color_sets";
+
+.color-sets {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.color-set {
+  display: flex;
+  border: 1px solid #ddd;
+  height: 200px;
+  width: 400px;
+  margin: 1rem;
+  
+  &__col {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+  
+  &__cell {
+    position: relative;
+    flex: 1 0 auto;
+    
+    &::before,
+    &::after {
+      position: absolute;
+      padding: 0.25rem;
+      font-family: monospace;
+    }
+    
+    &::before {
+      bottom: 0;
+      right: 0;
+      color: white;
+      background: #000;
+      border-top-left-radius: 6px;
+    }
+    
+    &::after {
+      top: 0;
+      left: 0;
+      background: #000;
+      color: white;
+      border-bottom-right-radius: 6px;
+    }
+    
+    &--accent::after {
+      content: 'Accent';
+    }
+      
+    &--container::after {
+      content: 'Container';
+    }
+      
+    &--high::after {
+      content: 'High';
+    }
+      
+    &--medium::after {
+      content: 'Medium';
+    }
+      
+    &--low::after {
+      content: 'Low';
+    }
+  }
+}
+
+.blue600-on-white {
+  @include colorSet($micro_gmBlue600OnWhite);
+}
+
+.white-on-blue600 {
+  @include colorSet($micro_gmWhiteOnBlue600);
+}
+
+.grey700-on-white-with-blue600 {
+  @include colorSet($micro_gmGrey700OnWhiteWithBlue600);
+}

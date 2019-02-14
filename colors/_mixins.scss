@@ -1,5 +1,34 @@
+@import "functions";
+
 @mixin ifColorMapHasKey($map, $key) {
   @if (map-has-key($map, $key)) {
-    @content
+    @content;
+  }
+}
+
+@mixin colorSetValue($color) {
+  background: $color;
+  &::before {
+    content: '#{$color}';
+  }
+}
+
+@mixin colorSet($colorSet) {
+  .color-set__cell {
+    &--container {
+      @include colorSetValue(ColorSet_getContainer($colorSet));
+    }
+    &--accent {
+      @include colorSetValue(ColorSet_getAccent($colorSet));
+    }
+    &--high {
+      @include colorSetValue(ColorSet_getHighEmphasis($colorSet));
+    }
+    &--medium {
+      @include colorSetValue(ColorSet_getMediumEmphasis($colorSet));
+    }
+    &--low {
+      @include colorSetValue(ColorSet_getLowEmphasis($colorSet));
+    }
   }
 }

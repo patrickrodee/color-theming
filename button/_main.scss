@@ -1,10 +1,10 @@
 @import "@material/button/mixins";
-@import "colors/gm_theme";
-@import "colors/gm_dark_theme";
 @import "colors/functions";
-@import "colors/theme";
+@import "themes/gm/color_sets";
+@import "themes/m/color_sets";
 @import "button/theme";
 
+// Load all button Sass without colors
 @include mdc-button(mdc-feature-without(color));
 
 // **********************************
@@ -15,13 +15,16 @@
 }
 
 .gm-button--text {
-  @include textButton($gmBlueOnWhite);
+  @include textButton($gmBlue600OnWhite);
 }
 
+// Avoids recreating a new color map
+$gmTextButtonMapping: extendedColorMap($textButtonMapping, (
+  ink: high,
+));
+
 .gm-button--text--grey {
-  @include textButton($gmGreyOnWhite, (
-    ink: high,
-  ));
+  @include textButton($gmGrey800OnWhite, $gmTextButtonMapping);
 }
 
 // **********************************
@@ -32,9 +35,8 @@
   @include filledButton($whiteOnPrimary);
 }
 
-// Only changes to color set
 .gm-button--filled {
-  @include filledButton($gmWhiteOnBlue);
+  @include filledButton($gmWhiteOnBlue600);
 }
 
 // **********************************
@@ -47,7 +49,7 @@
 
 // Only changes to color set
 .gm-button--elevated {
-  @include elevatedButton($gmBlueOnWhite);
+  @include elevatedButton($gmBlue600OnWhite);
 }
 
 
@@ -60,6 +62,7 @@
   @include outlinedButton($blackOnWhiteWithPrimary);
 }
 
+// Solves the disconnect between GM outline and M outline
 $gmOutlinedButtonMapping: extendedColorMap($elevatedButtonMapping, (
   outline: low,
 ));
@@ -71,5 +74,5 @@ $gmOutlinedButtonMapping: extendedColorMap($elevatedButtonMapping, (
 
 // Changes to color set and color mapping
 .gm-button--outlined {
-  @include outlinedButton($gmGreyOnWhite, $gmOutlinedButtonMapping);
+  @include outlinedButton($gmGrey800OnWhite, $gmOutlinedButtonMapping);
 }

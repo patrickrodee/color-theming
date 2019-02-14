@@ -1,0 +1,86 @@
+@import "../colors/functions";
+
+$filledTextFieldMapping: (
+  ink:                high,
+  bottomLine:         medium,
+  helperText:         medium,
+  textLabel:          medium,
+  icon:               medium,
+  caret:              accent,
+  activeBottomLine:   accent,
+  activeHelperText:   accent,
+  activeTextLabel:    accent,
+  errorBottomLine:    error,
+  errorHelperText:    error,
+  errorTextLabel:     error,
+  errorCaret:         error,
+);
+
+$outlinedTextFieldMapping: (
+  ink:                high,
+  outline:            low,
+  helperText:         medium,
+  textLabel:          medium,
+  icon:               medium,
+  caret:              accent,
+  hoverOutline:       low, // Purely an exception to make outline not change on hover in GM. 
+  activeOutline:      accent,
+  activeHelperText:   accent,
+  activeTextLabel:    accent,
+  errorOutline:       error,
+  errorHelperText:    error,
+  errorTextLabel:     error,
+  errorCaret:         error,
+);
+
+// *****************************************************************************
+// Possible mapping that allows for discrete color sets per condition
+// *****************************************************************************
+
+// Default Outline Text Field
+$defaultOutlinedTextFieldMapping: (
+  ink:                high,
+  caret:              medium,
+  outline:            medium,
+  helperText:         medium,
+  textLabel:          medium,
+  icon:               medium,
+  focusOutline:       accent,
+  focusTextLabel:     accent,
+);
+
+// Error Outline Text Field
+$errorOutlinedTextFieldMapping: (
+  ink:                high,
+  caret:              accent,
+  outline:            accent,
+  helperText:         medium,
+  textLabel:          accent,
+  icon:               medium,
+  focusOutline:       accent,
+  focusTextLabel:     accent,
+);
+
+// Default Filled Text Field
+$defaultFilledTextFieldMapping: (
+  ink:                high,
+  caret:              accent,
+  bottomLine:         medium,
+  helperText:         medium,
+  textLabel:          medium,
+  icon:               medium,
+  focusBottomLine:    accent,
+  focusTextLabel:     accent,
+);
+
+// Error Filled Text Field
+$errorFilledTextFieldMapping: (
+  ink:                high,
+  caret:              accent,
+  bottomLine:         accent,
+  helperText:         medium,
+  textLabel:          accent,
+  icon:               medium,
+  focusBottomLine:    accent,
+  focusTextLabel:     accent,
+);

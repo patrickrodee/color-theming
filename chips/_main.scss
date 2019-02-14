@@ -1,9 +1,19 @@
-@import "@material/chips/chip/mdc-chip";
-@import "colors/gm_theme";
-@import "colors/theme";
+@import "themes/gm/color_sets";
+@import "themes/m/color_sets";
 @import "chips/theme";
 
+// Load all chips Sass
+@import "@material/chips/chip/mdc-chip";
+
+// **********************************
+// INPUT CHIPS
+// **********************************
 .gm-chip--input {
-  @include inputChip($gmGreyOnWhite);
-  @include selectedInputChip($gmBlueOnBlue);
+  @include inputChip($gmGrey700OnWhite);
+  @include selectedInputChip($gmBlue700OnBlue50);
+}
+
+.m-chip--input-aligned {
+  @include inputChip($blackOnGreyWithPrimary);
+  @include selectedInputChip($whiteOnPrimary);
 }

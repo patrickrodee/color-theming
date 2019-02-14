@@ -1,24 +1,24 @@
 @import "@material/textfield/mdc-text-field";
-@import "colors/gm_theme";
-@import "colors/theme";
+@import "themes/gm/color_sets";
+@import "themes/m/color_sets";
 @import "textfield/theme";
 
-// **********************************
+// *****************************************************************************
 // FILLED TEXT FIELD
-// ********************************
+// *****************************************************************************
 .m-text-field--filled {
-  @include filledTextField($blackOnGreyWithPrimary);
+  @include filledTextField($blackOnGreyWithPrimaryAndAwkwardGrey);
 }
 
 .gm-text-field--filled {
-  @include filledTextField($gmGreyOnGrey);
+  @include filledTextField($gmGrey900OnGrey50);
 }
 
-// **********************************
+// *****************************************************************************
 // OUTLINED TEXT FIELD
-// **********************************
+// *****************************************************************************
 .gm-text-field--outlined {
-  @include outlinedTextField($gmGreyOnWhite);
+  @include outlinedTextField($gmGrey800OnWhite);
 }
 
 .m-text-field--outlined {

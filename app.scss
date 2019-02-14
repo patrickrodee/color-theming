@@ -9,10 +9,15 @@
 @import "button/main";
 @import "textfield/main";
 @import "chips/main";
+@import "tabs/main";
+@import "list/main";
+
+@import "conditions";
+@import "colors/main";
 
 .tbl {
   width: 100%;
-  
+
   &__heading {
     @include mdc-typography(headline5); 
 
@@ -20,7 +25,7 @@
   }
   
   &__cell {
-    padding: 1rem 0;
+    padding: 1rem;
   }
 }
 

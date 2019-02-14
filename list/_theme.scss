@@ -1,0 +1,31 @@
+@import "mapping";
+@import "colors/functions";
+@import "colors/mixins";
+@import "@material/list/mixins";
+@import "@material/ripple/mixins";
+
+@mixin list($colorSet, $colorMap: $listMapping) {
+  @include ifColorMapHasKey($colorMap, primaryTextLabel) {
+    @include mdc-list-item-primary-text-ink-color(getColor($colorSet, $colorMap, primaryTextLabel));
+
+    .mdc-list-item {
+      @include mdc-states(getColor($colorSet, $colorMap, primaryTextLabel));
+    }
+  }
+
+  @include ifColorMapHasKey($colorMap, secondaryTextLabel) {
+    @include mdc-list-item-secondary-text-ink-color(getColor($colorSet, $colorMap, secondaryTextLabel));
+  }
+
+  @include ifColorMapHasKey($colorMap, divider) {
+    @include mdc-list-divider-color(getColor($colorSet, $colorMap, divider));
+  }
+
+  @include ifColorMapHasKey($colorMap, avatar) {
+    @include mdc-list-item-graphic-ink-color(getColor($colorSet, $colorMap, avatar));
+  }
+
+  @include ifColorMapHasKey($colorMap, meta) {
+    @include mdc-list-item-meta-ink-color(getColor($colorSet, $colorMap, meta));
+  }
+}

@@ -1,0 +1,21 @@
+$tabMapping: (
+  ink:                medium,
+  icon:               medium,
+  activeInk:          accent,
+  activeIcon:         accent,
+  activeIndicator:    accent,
+);
+
+// ******************************************************************
+// Possible mapping that allows for discrete color sets per condition
+// ******************************************************************
+$defaultTabMapping: (
+  ink:                medium,
+  icon:               medium,
+);
+
+$activeTabMapping: (
+  ink:                accent,
+  icon:               accent,
+  indicator:          accent,
+);

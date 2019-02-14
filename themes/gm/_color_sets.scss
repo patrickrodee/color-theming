@@ -1,0 +1,108 @@
+@import "../../colors/functions";
+@import "variables";
+
+$gmWhiteOnBlue600: newColorSet(
+  $container:   $blue600,
+  $high:        $white,
+  $medium:      $blue50,
+  $low:         $blue100,
+  $accent:      $white,
+  $error:       $red700
+);
+
+$gmBlue600OnWhite: newColorSet(
+  $container:   $white,
+  $high:        $blue600,
+  $medium:      $blue100,
+  $low:         $blue50,
+  $accent:      $blue600,
+  $error:       $red700
+);
+
+$gmGrey700OnWhite: newColorSet(
+  $container:   $white,
+  $high:        $grey700,
+  $medium:      $grey600,
+  $low:         $grey300,
+  $accent:      $blue600,
+  $error:       $red600,
+);
+
+$gmGrey800OnWhite: extendColorSet($gmGrey700OnWhite, 
+  $high:        $grey800,
+  $medium:      $grey700,
+);
+
+$gmGrey900OnGrey50: newColorSet(
+  $container:   $grey50,
+  $high:        $grey800,
+  $medium:      $grey700,
+  $low:         $grey300,
+  $accent:      $blue600,
+  $error:       $red700
+);
+
+$gmBlue700OnBlue50: newColorSet(
+  $container:   $blue50,
+  $high:        $blue700,
+  $medium:      $blue500,
+  $low:         $blue300,
+  $accent:      $blue700,
+  $error:       $red700
+);
+
+// *****************************************************************************
+// Micro Color Sets
+// *****************************************************************************
+$micro_gmBlue600OnWhite: newMicroColorSet(
+  $container:   $white,
+  $high:        $blue600,
+  $medium:      $blue100,
+  $low:         $blue50,
+  $accent:      $blue600,
+);
+
+$micro_gmWhiteOnBlue600: newMicroColorSet(
+  $container:   $blue600,
+  $high:        $white,
+  $medium:      $blue100,
+  $low:         $blue300,
+  $accent:      $white,
+);
+
+$micro_gmGrey700OnWhiteWithBlue600: newMicroColorSet(
+  $container:   $white,
+  $high:        $grey700,
+  $medium:      $grey600,
+  $low:         $grey300,
+  $accent:      $blue600,
+);
+
+$micro_gmGrey700OnWhiteWithRed600: extendMicroColorSet($micro_gmGrey700OnWhiteWithBlue600,
+  $accent:      $red600,
+);
+
+$micro_gmGrey800OnWhite: extendColorSet($micro_gmGrey700OnWhiteWithBlue600, 
+  $high:        $grey800,
+  $medium:      $grey700,
+);
+
+$micro_gmGrey900OnGrey50WithBlue600: newMicroColorSet(
+  $container:   $grey50,
+  $high:        $grey800,
+  $medium:      $grey700,
+  $low:         $grey300,
+  $accent:      $blue600,
+);
+
+$micro_gmGrey900OnGrey50WithRed600: extendMicroColorSet($micro_gmGrey900OnGrey50WithBlue600,
+  $accent:    $red600,
+);
+
+$micro_gmDisabledColorSet: newMicroColorSet(
+  $container:   $grey100,
+  $high:        $grey500,
+  $medium:      $grey400,
+  $low:         $grey300,
+  $accent:      $grey500,
+);

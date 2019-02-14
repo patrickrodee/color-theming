@@ -1,0 +1,29 @@
+@import "@material/list/mixins";
+@import "colors/functions";
+@import "themes/gm/color_sets";
+@import "themes/m/color_sets";
+@import "list/theme";
+
+// Load all list Sass without color
+@include mdc-list(mdc-feature-without(color));
+
+// **********************************
+// LIST
+// **********************************
+.m-list {
+  @include list($blackOnWhiteWithPrimary);
+}
+
+// Remap the meta color from "low" to "high" to solve for GM
+$gmListAlignedMapping: extendedColorMap($listMapping, (
+  meta: medium,
+));
+
+.gm-list {
+  @include list($gmGrey800OnWhite, $gmListAlignedMapping);
+}
+
+// Use the GM list aligned mapping to solve for the changes to Meta
+.m-list--aligned {
+  @include list($blackOnWhiteWithPrimary, $gmListAlignedMapping);
+}

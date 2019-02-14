@@ -9,9 +9,39 @@
   );
 }
 
-@function extendColorSet($colorSet, $container, $high, $medium, $low, $accent, $error) {
+@function extendColorSet(
+  $colorSet,
+  $container: ColorSet_getContainer($colorSet),
+  $high:      ColorSet_getHighEmphasis($colorSet),
+  $medium:    ColorSet_getMediumEmphasis($colorSet),
+  $low:       ColorSet_getLowEmphasis($colorSet),
+  $accent:    ColorSet_getAccent($colorSet),
+  $error:     ColorSet_getError($colorSet)) {
   @return map-merge($colorSet, newColorSet($container, $high, $medium, $low, $accent, $error));
 }
+
+// *****************************************************************************
+// Micro Color Sets w/o Error
+// *****************************************************************************
+@function newMicroColorSet($container, $high, $medium, $low, $accent) {
+  @return (
+    container: $container,
+    high: $high,
+    medium: $medium,
+    low: $low,
+    accent: $accent,
+  );
+}
+
+@function extendMicroColorSet(
+  $colorSet,
+  $container: ColorSet_getContainer($colorSet),
+  $high:      ColorSet_getHighEmphasis($colorSet),
+  $medium:    ColorSet_getMediumEmphasis($colorSet),
+  $low:       ColorSet_getLowEmphasis($colorSet),
+  $accent:    ColorSet_getAccent($colorSet)) {
+    @return map-merge($colorSet, newMicroColorSet($container, $high, $medium, $low, $accent));
+  }
 
 @function extendedColorMap($colorMap, $map) {
   @return map-merge($colorMap, $map);
@@ -43,6 +73,10 @@
 
 @function getColor($colorSet, $colorMap, $elementName) {
   $colorName: map-get($colorMap, $elementName);
+
+  @if ($colorName == container) {
+    @return ColorSet_getContainer($colorSet);
+  }
 
   @if ($colorName == high) {
     @return ColorSet_getHighEmphasis($colorSet);
