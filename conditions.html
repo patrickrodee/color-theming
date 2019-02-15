@@ -12,10 +12,22 @@
     <!-- Apply Material headline3 style to this <h1> element -->
     <h1 class="mdc-typography--headline3">Color Theming Proposal Testing</h1>
 
-    <label>
-      <input type="checkbox" name="disabled" id="disabled" class="disabled-interactive-elements">
-      <span>Disable Interactive Elements</span>
-    </label>
+    <p>
+      <label>
+        <input type="checkbox" name="disabled" id="disabled" class="disabled-interactive-elements">
+        <span>Disable Interactive Elements</span>
+      </label>
+    </p>
+
+    <p>
+      <label>
+        <input type="checkbox" name="error" id="error" class="error-interactive-elements">
+        <span>Error Interactive Elements</span>
+      </label>
+    </p>
+    
+
+    <p><a href="colorsets.html">See color sets</a></p>
     
     <table class="tbl">
       <tbody>
@@ -140,7 +152,6 @@
           </td>
         </tr>
 
-        <!--
         <tr>
           <td class="tbl__cell">Input Chips</td>
           <td class="tbl__cell">
@@ -157,25 +168,22 @@
           </td>
           <td class="tbl__cell">
             <div class="mdc-chip-set mdc-chip-set--input">
-              <div class="mdc-chip gm-chip--input">
+              <div class="mdc-chip chips__input--gm">
                 <div class="mdc-chip__text">Jane Smith</div>
                 <i class="material-icons mdc-chip__icon mdc-chip__icon--trailing" tabindex="0" role="button">close</i>
               </div>
-              <div class="mdc-chip mdc-chip--selected gm-chip--input">
+              <div class="mdc-chip mdc-chip--selected chips__input--gm">
                 <div class="mdc-chip__text">Jane Smith</div>
                 <i class="material-icons mdc-chip__icon mdc-chip__icon--trailing" tabindex="0" role="button">close</i>
               </div>
             </div>
-          </td>
-          <td class="tbl__cell">
-            So different that I don't think there is alignment
           </td>
         </tr>
 
         <tr>
           <td class="tbl__cell">Tabs</td>
           <td class="tbl__cell">
-            <div class="mdc-tab-bar m-tab" role="tablist">
+            <div class="mdc-tab-bar tabs--m" role="tablist">
               <div class="mdc-tab-scroller">
                 <div class="mdc-tab-scroller__scroll-area">
                   <div class="mdc-tab-scroller__scroll-content">
@@ -192,7 +200,7 @@
                     <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
                       <span class="mdc-tab__content">
                         <span class="mdc-tab__icon material-icons" aria-hidden="true">money</span>
-                        <span class="mdc-tab__text-label">Money</span>
+                        <span class="mdc-tab__text-label">Cash Money</span>
                       </span>
                       <span class="mdc-tab-indicator">
                         <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
@@ -205,14 +213,14 @@
             </div>
           </td>
           <td class="tbl__cell">
-            <div class="mdc-tab-bar gm-tab" role="tablist">
+            <div class="mdc-tab-bar tabs--gm" role="tablist">
               <div class="mdc-tab-scroller">
                 <div class="mdc-tab-scroller__scroll-area">
                   <div class="mdc-tab-scroller__scroll-content">
                     <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
                       <span class="mdc-tab__content">
-                        <span class="mdc-tab__icon material-icons" aria-hidden="true">hot_tub</span>
-                        <span class="mdc-tab__text-label">Hot Tubs</span>
+                        <span class="mdc-tab__icon material-icons" aria-hidden="true">nature_people</span>
+                        <span class="mdc-tab__text-label">Nature</span>
                       </span>
                       <span class="mdc-tab-indicator mdc-tab-indicator--active">
                         <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
@@ -221,8 +229,8 @@
                     </button>
                     <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
                       <span class="mdc-tab__content">
-                        <span class="mdc-tab__icon material-icons" aria-hidden="true">local_pizza</span>
-                        <span class="mdc-tab__text-label">Pizza</span>
+                        <span class="mdc-tab__icon material-icons" aria-hidden="true">money</span>
+                        <span class="mdc-tab__text-label">Cash Money</span>
                       </span>
                       <span class="mdc-tab-indicator">
                         <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
@@ -236,6 +244,7 @@
           </td>
         </tr>
 
+        <!--
         <tr>
           <td class="tbl__cell">Single Selection List</td>
           <td class="tbl__cell">

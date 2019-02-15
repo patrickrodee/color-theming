@@ -1,0 +1,14 @@
+@import "mapping";
+@import "theme";
+@import "themes/gm/color_sets";
+@import "themes/m/color_sets";
+
+.chips {
+  &__input {
+    &--gm {
+      @include defaultInputChip($micro_gmGrey700OnWhiteWithBlue600);
+      @include selectedInputChip($micro_gmBlue700OnBlue50);
+      @include errorInputChip($micro_gmMildError);
+    }
+  }
+}

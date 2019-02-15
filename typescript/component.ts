@@ -1,58 +1,90 @@
-import {ColorSet, ColorMap} from './colors';
+import {ColorMap} from './colors/map';
 
-export interface IBaseComponent {
-  default(colorSet: ColorSet, colorMap?: ColorMap): void;
-}
+export abstract class Component<T extends ColorMap> {
+  protected defaultColorMap: T;
 
-export interface IErrorableComponent extends IBaseComponent {
-  error(colorSet: ColorSet, colorMap?: ColorMap): void;
-}
-
-export interface IActivatableComponent extends IBaseComponent {
-  active(colorSet: ColorSet, colorMap?: ColorMap): void;
-}
-
-export interface ISelectableComponent extends IBaseComponent {
-  selected(colorSet: ColorSet, colorMap?: ColorMap): void;
-}
-
-export interface IDisableableComponent extends IBaseComponent {
-  disabled(colorSet: ColorSet, colorMap?: ColorMap): void;
-}
-
-export interface Fab extends IBaseComponent {}
-export interface Button extends IDisableableComponent {}
-export interface Checkbox extends ISelectableComponent {}
-export interface Radio extends ISelectableComponent {}
-export interface Tab extends IActivatableComponent {}
-export interface TextField extends IErrorableComponent, IActivatableComponent {}
-
-export abstract class Component implements IBaseComponent {
-  protected defaultColorSet: ColorSet;
-  protected defaultColorMap: ColorMap;
-
-  default(colorSet, colorMap?) {
-    this.defaultColorSet = colorSet;
+  constructor(colorMap: T) {
     this.defaultColorMap = colorMap;
   }
-}
 
-export abstract class DisableableComponent extends Component implements IDisableableComponent {
-  protected disabledColorSet: ColorSet;
-  protected disabledColorMap: ColorMap;
-
-  disabled(colorSet, colorMap) {
-    this.disabledColorSet = colorSet;
-    this.disabledColorMap = colorMap;
+  protected getColorMap(): T {
+    return this.defaultColorMap;
   }
 }
 
-export abstract class SelectableComponent extends Component implements ISelectableComponent {
-  protected disabledColorSet: ColorSet;
-  protected disabledColorMap: ColorMap;
+export abstract class DisableableComponent<T> extends Component<T> {
+  protected disabledColorMap: T;
+  protected isDisabled: boolean;
 
-  disabled(colorSet, colorMap) {
-    this.disabledColorSet = colorSet;
-    this.disabledColorMap = colorMap;
+  constructor(colorMap: T, disabledColorMap: T) {
+    super(colorMap);
+    this.disabledColorMap = disabledColorMap;
+  }
+
+  set disabled(disabled) {
+    this.isDisabled = disabled;
+  }
+
+  protected getColorMap(): T {
+    if (this.isDisabled) {
+      return this.disabledColorMap;
+    }
+
+    return super.getColorMap();
+  }
+}
+
+export abstract class ActivateableComponent<T> extends Component<T> {
+  protected activatedColorMap: T;
+  protected isActivated: boolean;
+
+  constructor(colorMap: T, activatedColorMap: T) {
+    super(colorMap);
+    this.activatedColorMap = activatedColorMap;
+  }
+
+  set activated(activated) {
+    this.isActivated = activated;
+  }
+
+  protected getColorMap(): T {
+    if (this.isActivated) {
+      return this.activatedColorMap;
+    }
+
+    return super.getColorMap();
+  }
+}
+
+export abstract class ActivateableDisableableComponent<T> extends Component<T> {
+  protected activatedColorMap: T;
+  protected disabledColorMap: T;
+  protected isActivated: boolean;
+  protected isDisabled: boolean;
+
+  set activated(activated) {
+    this.isActivated = activated;
+  }
+
+  set disabled(disabled) {
+    this.isDisabled = disabled;
+  }
+
+  constructor(colorMap: T, activatedColorMap: T, disabledColorMap: T) {
+    super(colorMap);
+    this.activatedColorMap = activatedColorMap;
+    this.disabledColorMap = disabledColorMap;
+  }
+
+  protected getColorMap(): T {
+    if (this.isDisabled) {
+      return this.disabledColorMap
+    }
+
+    if (this.isActivated) {
+      return this.activatedColorMap;
+    }
+
+    return super.getColorMap();
   }
 }

@@ -9,6 +9,7 @@
     &--gm {
       @include defaultOutlinedTextField($micro_gmGrey700OnWhiteWithBlue600);
       @include errorOutlinedTextField($micro_gmGrey700OnWhiteWithRed600);
+      @include disabledOutlinedTextField($micro_gmDisabledColorSet);
     }
   }
 
@@ -16,6 +17,7 @@
     &--gm {
       @include defaultFilledTextField($micro_gmGrey900OnGrey50WithBlue600);
       @include errorFilledTextField($micro_gmGrey900OnGrey50WithRed600);
+      @include disabledFilledTextField($micro_gmDisabledColorSet);
     }
   }
 }

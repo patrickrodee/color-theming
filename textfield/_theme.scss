@@ -127,62 +127,6 @@
   }
 }
 
-@mixin errorOutlinedTextField($colorSet, $colorMap: $outlinedTextFieldMapping) {
-  &.mdc-text-field--invalid {
-    @include outlinedTextField($colorSet, $colorMap);
-  }
-}
-
-// *****************************************************************************
-// Discrete theming methods per condition
-// *****************************************************************************
-@mixin defaultFilledTextField($colorSet, $colorMap: $filledTextFieldMapping) {
-  @include mdc-text-field-fill-color(ColorSet_getContainer($colorSet));
-
-  @include ifColorMapHasKey($colorMap, ink) {
-    @include mdc-text-field-ink-color(getColor($colorSet, $colorMap, ink));
-  }
-  
-  @include ifColorMapHasKey($colorMap, bottomLine) {
-    @include mdc-text-field-bottom-line-color(getColor($colorSet, $colorMap, bottomLine));
-  }
-  
-  @include ifColorMapHasKey($colorMap, helperText) {
-    @include mdc-text-field-helper-text-color(getColor($colorSet, $colorMap, helperText));
-  }
-  
-  @include ifColorMapHasKey($colorMap, textLabel) {
-    @include mdc-text-field-label-color(getColor($colorSet, $colorMap, textLabel));
-  }
-  
-  @include ifColorMapHasKey($colorMap, icon) {
-    @include mdc-text-field-icon-color(getColor($colorSet, $colorMap, icon));
-  }
-  
-  @include ifColorMapHasKey($colorMap, caret) {
-    @include mdc-text-field-caret-color(getColor($colorSet, $colorMap, caret));
-  }
-}
-
-@mixin activeFilledTextField($colorSet, $colorMap: $activeFilledTextFieldMapping) {
-  &.mdc-text-field--focused {
-    @include defaultFilledTextField($colorSet, $colorMap);
-  }
-
-  @include ifColorMapHasKey($colorMap, bottomLine) {
-    @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, bottomLine));
-  }
-}
-
-@mixin errorFilledTextField($colorSet, $colorMap: $errorFilledTextFieldMapping) {
-  &.mdc-text-field--invalid {
-    @include defaultFilledTextField($colorSet, $colorMap);
-    @include ifColorMapHasKey($colorMap, bottomLine) {
-      @include mdc-text-field-line-ripple-color(getColor($colorSet, $colorMap, bottomLine));
-    }
-  }
-}
-
 // *****************************************************************************
 // Discrete theming methods per condition
 // *****************************************************************************
@@ -212,6 +156,13 @@
   }
 }
 
+// Disabled Outlined Text Field
+@mixin disabledOutlinedTextField($colorSet, $colorMap: $disabledOutlinedTextFieldMapping) {
+  &.mdc-text-field--disabled {
+    @include defaultOutlinedTextField($colorSet, $colorMap);
+  }
+}
+
 // Default Filled Text Field
 @mixin defaultFilledTextField($colorSet, $colorMap: $defaultFilledTextFieldMapping) {
   @include mdc-text-field-fill-color(ColorSet_getContainer($colorSet));
@@ -231,6 +182,13 @@
 // Error Filled Text Field
 @mixin errorFilledTextField($colorSet, $colorMap: $errorFilledTextFieldMapping) {
   &.mdc-text-field--invalid {
+    @include defaultFilledTextField($colorSet, $colorMap);
+  }
+}
+
+// Disabled Filled Text Field
+@mixin disabledFilledTextField($colorSet, $colorMap: $disabledFilledTextFieldMapping) {
+  &.mdc-text-field--disabled {
     @include defaultFilledTextField($colorSet, $colorMap);
   }
 }

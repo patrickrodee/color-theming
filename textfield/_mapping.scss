@@ -61,6 +61,18 @@ $errorOutlinedTextFieldMapping: (
   focusTextLabel:     accent,
 );
 
+// Error Outline Text Field
+$disabledOutlinedTextFieldMapping: (
+  ink:                high,
+  caret:              medium,
+  outline:            medium,
+  helperText:         medium,
+  textLabel:          medium,
+  icon:               medium,
+  focusOutline:       accent,
+  focusTextLabel:     accent,
+);
+
 // Default Filled Text Field
 $defaultFilledTextFieldMapping: (
   ink:                high,
@@ -80,6 +92,18 @@ $errorFilledTextFieldMapping: (
   bottomLine:         accent,
   helperText:         medium,
   textLabel:          accent,
+  icon:               medium,
+  focusBottomLine:    accent,
+  focusTextLabel:     accent,
+);
+
+// Error Filled Text Field
+$disabledFilledTextFieldMapping: (
+  ink:                high,
+  caret:              medium,
+  bottomLine:         medium,
+  helperText:         medium,
+  textLabel:          medium,
   icon:               medium,
   focusBottomLine:    accent,
   focusTextLabel:     accent,

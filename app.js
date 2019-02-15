@@ -4,8 +4,12 @@ import {MDCChipSet} from '@material/chips';
 import {MDCTabBar} from '@material/tab-bar';
 import {MDCList} from '@material/list';
 
+function childElementArray(root, query) {
+  return [...root.querySelectorAll(query)]
+}
+
 function elementArray(query) {
-  return [...document.querySelectorAll(query)]
+  return childElementArray(document, query);
 }
 
 const buttons = new Set();
@@ -45,4 +49,79 @@ if (disableControl) {
 
 function disableInteractiveElements(disabled) {
   elementArray('.mdc-button').forEach((btn) => btn.disabled = disabled);
+  elementArray('.mdc-text-field').forEach((tf) => tf.classList.toggle('mdc-text-field--disabled', disabled));
 }
+
+const errorControl = document.querySelector('.error-interactive-elements');
+if (errorControl) {
+  errorControl.addEventListener('change', (evt) => {
+    errorInteractiveElements(evt.target.checked);
+  });
+}
+
+function errorInteractiveElements(error) {
+  elementArray('.mdc-text-field').forEach((tf) => tf.classList.toggle('mdc-text-field--invalid', error));
+  elementArray('.mdc-chip-set--input .mdc-chip').forEach((chip) => chip.classList.toggle('mdc-chip--error', error));
+}
+
+function rgbToObj(rgb) {
+  const colors = rgb.replace(/[^\d,]/g, '').split(',');
+  return {
+    r: parseInt(colors[0]),
+    g: parseInt(colors[1]),
+    b: parseInt(colors[2]),
+  }
+}
+
+function luminanace(rgb) {
+  const {r, g, b} = rgbToObj(rgb);
+  var a = [r, g, b].map(function (v) {
+      v /= 255;
+      return v <= 0.03928
+          ? v / 12.92
+          : Math.pow( (v + 0.055) / 1.055, 2.4 );
+  });
+  return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+}
+
+function contrast(rgb1, rgb2) {
+  const lum1 = luminanace(rgb1) + 0.05;
+  const lum2 = luminanace(rgb2) + 0.05;
+  const oneOverTwo = lum1 / lum2;
+  const twoOverOne = lum2 / lum1;
+  if (oneOverTwo > twoOverOne) {
+    return oneOverTwo;
+  }
+  return twoOverOne;
+}
+
+function getElementBgColor(el) {
+  return window.getComputedStyle(el).backgroundColor;
+}
+
+function calculateContrastForColorSet(colorSetEl) {
+  const containerEls = childElementArray(colorSetEl, '.color-set__cell--container');
+  const containerColor = getElementBgColor(containerEls[0]);
+  const colorSetCellEls = childElementArray(colorSetEl, '.color-set__cell:not(.color-set__cell--container)');
+  colorSetCellEls.forEach((el) => {
+    const cellColor = getElementBgColor(el);
+    const ratio = contrast(containerColor, cellColor);
+    el.dataset.contrastRatio = ratio.toFixed(2);
+
+    if (ratio >= 4.5) {
+      el.classList.add('color-set__cell--ok');
+    }
+
+    if (ratio < 4.5 && ratio >= 3) {
+      el.classList.add('color-set__cell--warn');
+    }
+
+    if (ratio < 3) {
+      el.classList.add('color-set__cell--fail');
+    }
+  });
+}
+
+elementArray('.color-set').forEach((colorSet) => {
+  calculateContrastForColorSet(colorSet);
+})

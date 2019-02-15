@@ -6,22 +6,26 @@
 
 @mixin inputChip($colorSet, $colorMap: $inputChipMapping) {
   @include mdc-chip-fill-color(ColorSet_getContainer($colorSet));
-  
-  @include ifColorMapHasKey($colorMap, ink) {
-    @include mdc-chip-ink-color(getColor($colorSet, $colorMap, ink));
-  }
-  
-  @include ifColorMapHasKey($colorMap, trailingIcon) {
-    @include mdc-chip-trailing-icon-color(getColor($colorSet, $colorMap, trailingIcon));
-  }
-  
-  @include ifColorMapHasKey($colorMap, outline) {
-    @include mdc-chip-outline($width: 1px, $color: getColor($colorSet, $colorMap, outline));
+  @include mdc-chip-ink-color(getColor($colorSet, $colorMap, ink));
+  @include mdc-chip-trailing-icon-color(getColor($colorSet, $colorMap, trailingIcon));
+  @include mdc-chip-outline($width: 1px, $color: getColor($colorSet, $colorMap, outline));
+}
+
+@mixin defaultInputChip($colorSet, $colorMap: $defaultChipMapping) {
+  @include mdc-chip-fill-color(ColorSet_getContainer($colorSet));
+  @include mdc-chip-ink-color(getColor($colorSet, $colorMap, ink));
+  @include mdc-chip-trailing-icon-color(getColor($colorSet, $colorMap, trailingIcon));
+  @include mdc-chip-outline($width: 1px, $color: getColor($colorSet, $colorMap, outline));
+}
+
+@mixin selectedInputChip($colorSet, $colorMap: $selectedChipMapping) {
+  &.mdc-chip--selected {
+    @include defaultInputChip($colorSet, $colorMap);
   }
 }
 
-@mixin selectedInputChip($colorSet, $colorMap: $inputChipMapping) {
-  &.mdc-chip--selected {
-    @include inputChip($colorSet, $colorMap);
+@mixin errorInputChip($colorSet, $colorMap: $errorChipMapping) {
+  &.mdc-chip--error {
+    @include defaultInputChip($colorSet, $colorMap);
   }
 }

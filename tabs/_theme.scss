@@ -45,29 +45,28 @@
   }
 }
 
+// *****************************************************************************
+// Discrete theming methods per condition
+// *****************************************************************************
+
 @mixin defaultTab($colorSet, $colorMap: $defaultTabMapping) {
+  background-color: ColorSet_getContainer($colorSet);
+
   // Overriding some silly stuff that I am 100% to blame for
   .mdc-tab__text-label,
   .mdc-tab__icon {
     opacity: 1;
   }
 
-  @include ifColorMapHasKey($colorMap, ink) {
-    @include mdc-tab-text-label-color(getColor($colorSet, $colorMap, ink));
+  @include mdc-tab-text-label-color(getColor($colorSet, $colorMap, ink));
+  @include mdc-tab-icon-color(getColor($colorSet, $colorMap, icon));
 
-    .mdc-tab__ripple {
-      @include mdc-states(getColor($colorSet, $colorMap, ink));
-    }
+  .mdc-tab__ripple {
+    @include mdc-states(getColor($colorSet, $colorMap, ink));
   }
 
-  @include ifColorMapHasKey($colorMap, icon) {
-    @include mdc-tab-icon-color(getColor($colorSet, $colorMap, icon));
-  }
-
-  @include ifColorMapHasKey($colorMap, indicator) {
-    .mdc-tab-indicator {
-      @include mdc-tab-indicator-underline-color(getColor($colorSet, $colorMap, indicator));
-    }
+  .mdc-tab-indicator {
+    @include mdc-tab-indicator-underline-color(getColor($colorSet, $colorMap, indicator));
   }
 }
 

@@ -38,38 +38,26 @@
       border-top-left-radius: 6px;
     }
     
-    &::after {
+    &:not(&--container)::after {
+      content: attr(data-contrast-ratio);
       top: 0;
       left: 0;
       background: #000;
-      color: white;
       border-bottom-right-radius: 6px;
     }
-    
-    &--accent::after {
-      content: 'Accent';
+
+    &--ok::after {
+      color: chartreuse;
     }
-      
-    &--container::after {
-      content: 'Container';
+
+    &--warn::after {
+      color: yellow;
     }
-      
-    &--high::after {
-      content: 'High';
-    }
-      
-    &--medium::after {
-      content: 'Medium';
-    }
-      
-    &--low::after {
-      content: 'Low';
+
+    &--fail::after {
+      color: orangered;
     }
   }
-}
-
-.blue600-on-white {
-  @include colorSet($micro_gmBlue600OnWhite);
 }
 
 .white-on-blue600 {
@@ -78,4 +66,32 @@
 
 .grey700-on-white-with-blue600 {
   @include colorSet($micro_gmGrey700OnWhiteWithBlue600);
+}
+
+.grey800-on-white-with-blue600 {
+  @include colorSet($micro_gmGrey800OnWhite);
+}
+
+.grey700-on-white-with-red600 {
+  @include colorSet($micro_gmGrey700OnWhiteWithRed600);
+}
+
+.grey900-on-grey50-with-blue600 {
+  @include colorSet($micro_gmGrey900OnGrey50WithBlue600);
+}
+
+.grey900-on-grey50-with-red600 {
+  @include colorSet($micro_gmGrey900OnGrey50WithRed600);
+}
+
+.gm-disabled {
+  @include colorSet($micro_gmDisabledColorSet);
+}
+
+.blue700-on-blue50 {
+  @include colorSet($micro_gmBlue700OnBlue50);
+}
+
+.red700-on-red50 {
+  @include colorSet($micro_gmError);
 }

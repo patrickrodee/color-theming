@@ -6,10 +6,10 @@
 .button {
   &__text {
     &--gm {
-      @include defaultTextButton($micro_gmBlue600OnWhite);
+      @include defaultTextButton($micro_gmGrey700OnWhiteWithBlue600);
       @include disabledTextButton($micro_gmDisabledColorSet);
       &--grey {
-        @include defaultTextButton($micro_gmGrey800OnWhite, (
+        @include defaultTextButton($micro_gmGrey700OnWhiteWithBlue600, (
           ink:  high,
         ));
         @include disabledTextButton($micro_gmDisabledColorSet);
@@ -26,7 +26,7 @@
 
   &__raised {
     &--gm {
-      @include defaultRaisedButton($micro_gmBlue600OnWhite);
+      @include defaultRaisedButton($micro_gmGrey700OnWhiteWithBlue600);
       @include disabledRaisedButton($micro_gmDisabledColorSet);
     }
   }
