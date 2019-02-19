@@ -1,3 +1,9 @@
 $defaultCheckboxMapping: (
-  outline: high,
+  stroke:   high,
+  ink:      accent,
+);
+
+$selectedCheckboxMapping: (
+  stroke:   container,
+  ink:      accent,
 );

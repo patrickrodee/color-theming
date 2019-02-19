@@ -1,0 +1,15 @@
+@import "@material/checkbox/mixins";
+@import "mapping";
+@import "theme";
+@import "themes/gm/color_sets";
+@import "themes/m/color_sets";
+
+// Load all checkbox Sass without colors
+@include mdc-checkbox(mdc-feature-without(color));
+
+.checkbox {
+  &__gm {
+    @include defaultCheckbox($gmGrey700OnWhite);
+    @include selectedCheckbox($gmWhiteOnBlue600);
+  }
+}

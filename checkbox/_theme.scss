@@ -1,0 +1,21 @@
+@import "mapping";
+@import "colors/functions";
+@import "colors/mixins";
+@import "@material/checkbox/mixins";
+@import "@material/ripple/mixins";
+
+@mixin defaultCheckbox($colorSet, $colorMap: $defaultCheckboxMapping) {
+  @include mdc-checkbox-container-colors(
+    $unmarked-stroke-color: getColor($colorSet, $colorMap, stroke),
+    $unmarked-fill-color: getColor($colorSet, $colorMap, container),
+  );
+  @include mdc-checkbox-ink-color(getColor($colorSet, $colorMap, ink));
+}
+
+@mixin selectedCheckbox($colorSet, $colorMap: $selectedCheckboxMapping) {
+  @include mdc-checkbox-container-colors(
+    $marked-stroke-color: getColor($colorSet, $colorMap, stroke),
+    $marked-fill-color: getColor($colorSet, $colorMap, container),
+  );
+  @include mdc-checkbox-ink-color(getColor($colorSet, $colorMap, ink));
+}

@@ -1,0 +1,16 @@
+@import "mapping";
+@import "colors/functions";
+@import "colors/mixins";
+@import "@material/radio/mixins";
+@import "@material/ripple/mixins";
+
+@mixin defaultRadio($colorSet, $colorMap: $defaultRadioMapping) {
+  @include mdc-radio-unchecked-stroke-color(getColor($colorSet, $colorMap, stroke));
+  @include mdc-radio-ink-color(getColor($colorSet, $colorMap, ink));
+  // Ink is unused
+}
+
+@mixin selectedRadio($colorSet, $colorMap: $selectedRadioMapping) {
+  @include mdc-radio-checked-stroke-color(getColor($colorSet, $colorMap, stroke));
+  @include mdc-radio-ink-color(getColor($colorSet, $colorMap, ink));
+}

@@ -1,0 +1,15 @@
+@import "mapping";
+@import "colors/functions";
+@import "colors/mixins";
+@import "@material/switch/mixins";
+@import "@material/ripple/mixins";
+
+@mixin defaultSwitch($colorSet, $colorMap: $defaultSwitchMapping) {
+  @include mdc-switch-toggled-off-track-color(getColor($colorSet, $colorMap, track));
+  @include mdc-switch-toggled-off-thumb-color(getColor($colorSet, $colorMap, thumb));
+}
+
+@mixin selectedSwitch($colorSet, $colorMap: $selectedSwitchMapping) {
+  @include mdc-switch-toggled-on-track-color(getColor($colorSet, $colorMap, track));
+  @include mdc-switch-toggled-on-thumb-color(getColor($colorSet, $colorMap, thumb));
+}

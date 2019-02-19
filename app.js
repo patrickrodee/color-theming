@@ -3,6 +3,8 @@ import {MDCTextField} from '@material/textfield/index';
 import {MDCChipSet} from '@material/chips';
 import {MDCTabBar} from '@material/tab-bar';
 import {MDCList} from '@material/list';
+import {MDCCheckbox} from '@material/checkbox';
+import {MDCRadio} from '@material/radio';
 
 function childElementArray(root, query) {
   return [...root.querySelectorAll(query)]
@@ -40,6 +42,18 @@ elementArray('.mdc-list').forEach((listEl) => {
   lists.add(list);
 });
 
+const checkboxes = new Set();
+elementArray('.mdc-checkbox').forEach((checkboxEl) => {
+  const checkbox = new MDCCheckbox(checkboxEl);
+  checkboxes.add(checkbox);
+});
+
+const radios = new Set();
+elementArray('.mdc-radio').forEach((radioEl) => {
+  const radio = new MDCRadio(radioEl);
+  radios.add(radio);
+});
+
 const disableControl = document.querySelector('.disabled-interactive-elements');
 if (disableControl) {
   disableControl.addEventListener('change', (evt) => {
@@ -50,6 +64,10 @@ if (disableControl) {
 function disableInteractiveElements(disabled) {
   elementArray('.mdc-button').forEach((btn) => btn.disabled = disabled);
   elementArray('.mdc-text-field').forEach((tf) => tf.classList.toggle('mdc-text-field--disabled', disabled));
+  elementArray('.mdc-radio').forEach((r) => {
+    r.classList.toggle('mdc-radio--disabled', disabled);
+    r.querySelector('input').disabled = disabled;
+  });
 }
 
 const errorControl = document.querySelector('.error-interactive-elements');

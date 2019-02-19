@@ -140,7 +140,7 @@
 // Disabled Filled Button
 @mixin disabledFilledButton($colorSet, $colorMap: $disabledFilledButtonMapping) {
   &:disabled {
-    background-color: ColorSet_getContainer($colorSet);
+    background-color: getColor($colorSet, $colorMap, container);
 
     @include ifColorMapHasKey($colorMap, ink) {
       color: getColor($colorSet, $colorMap, ink);
@@ -156,7 +156,7 @@
 
 // Default Raised Button
 @mixin defaultRaisedButton($colorSet, $colorMap: $defaultRaisedButtonMapping) {
-  @include mdc-button-container-fill-color(ColorSet_getContainer($colorSet));
+  @include mdc-button-container-fill-color(getColor($colorSet, $colorMap, container));
   @include mdc-elevation(2);
   
   @include ifColorMapHasKey($colorMap, ink) {
@@ -172,7 +172,7 @@
 // Disabled Raised Button
 @mixin disabledRaisedButton($colorSet, $colorMap: $disabledRaisedButtonMapping) {
   &:disabled {
-    background-color: ColorSet_getContainer($colorSet);
+    background-color: getColor($colorSet, $colorMap, container);
 
     @include ifColorMapHasKey($colorMap, ink) {
       color: getColor($colorSet, $colorMap, ink);

@@ -1,0 +1,15 @@
+@import "@material/radio/mixins";
+@import "mapping";
+@import "theme";
+@import "themes/gm/color_sets";
+@import "themes/m/color_sets";
+
+// Load all switch Sass without colors
+@include mdc-radio(mdc-feature-without(color));
+
+.radio {
+  &__gm {
+    @include defaultRadio($micro_gmGrey700OnWhiteWithBlue600);
+    @include selectedRadio($micro_gmGrey700OnWhiteWithBlue600);
+  }
+}
