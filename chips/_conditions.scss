@@ -10,5 +10,9 @@
       @include selectedInputChip($micro_gmBlue700OnBlue50);
       @include errorInputChip($micro_gmMildError);
     }
+    &--m {
+      @include defaultInputChip($micro_mBlackOnGrey);
+      @include selectedInputChip($micro_mWhiteOnPurple);
+    }
   }
 }

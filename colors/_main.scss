@@ -1,4 +1,5 @@
 @import "../themes/gm/color_sets";
+@import "../themes/m/color_sets";
 
 .color-sets {
   display: flex;
@@ -94,4 +95,33 @@
 
 .red700-on-red50 {
   @include colorSet($micro_gmError);
+}
+
+// M
+.black-on-white-with-purple {
+  @include colorSet($micro_mBlackOnWhiteWithPurple);
+}
+
+.black-on-white-with-error {
+  @include colorSet($micro_mBlackOnWhiteWithError);
+}
+
+.white-on-purple {
+  @include colorSet($micro_mWhiteOnPurple);
+}
+
+.m-disabled {
+  @include colorSet($micro_mDisabled);
+}
+
+.black-on-grey {
+  @include colorSet($micro_mBlackOnGrey);
+}
+
+.black-on-super-light-grey-with-purple {
+  @include colorSet($micro_mBlackOnSuperLightGreyWithPurple);
+}
+
+.black-on-super-light-grey-with-error {
+  @include colorSet($micro_mBlackOnSuperLightGreyWithRed);
 }

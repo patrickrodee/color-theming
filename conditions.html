@@ -120,7 +120,7 @@
           <td class="tbl__cell">Outlined Text Field</td>
           <td class="tbl__cell">
             <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon textfield__outlined--m">
-              <i class="material-icons mdc-text-field__icon" tabindex="0" role="button">hot_tub</i>
+              <i class="material-icons mdc-text-field__icon" tabindex="0" role="button">person</i>
               <input type="text" id="tf-outlined1" class="mdc-text-field__input" required minlength="8">
               <div class="mdc-notched-outline">
                 <div class="mdc-notched-outline__leading"></div>
@@ -136,7 +136,7 @@
           </td>
           <td class="tbl__cell">
             <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon textfield__outlined--gm">
-              <i class="material-icons mdc-text-field__icon" tabindex="0" role="button">hot_tub</i>
+              <i class="material-icons mdc-text-field__icon" tabindex="0" role="button">person</i>
               <input type="text" id="tf-outlined2" class="mdc-text-field__input" required minlength="8">
               <div class="mdc-notched-outline">
                 <div class="mdc-notched-outline__leading"></div>
@@ -156,11 +156,11 @@
           <td class="tbl__cell">Input Chips</td>
           <td class="tbl__cell">
             <div class="mdc-chip-set mdc-chip-set--input">
-              <div class="mdc-chip">
+              <div class="mdc-chip chips__input--m">
                 <div class="mdc-chip__text">Jane Smith</div>
                 <i class="material-icons mdc-chip__icon mdc-chip__icon--trailing" tabindex="0" role="button">close</i>
               </div>
-              <div class="mdc-chip mdc-chip--selected">
+              <div class="mdc-chip mdc-chip--selected chips__input--m">
                 <div class="mdc-chip__text">Jane Smith</div>
                 <i class="material-icons mdc-chip__icon mdc-chip__icon--trailing" tabindex="0" role="button">close</i>
               </div>
@@ -247,7 +247,7 @@
         <tr>
           <td class="tbl__cell">Checkbox</td>
           <td class="tbl__cell">
-            <div class="mdc-checkbox checkbox__m">
+            <div class="mdc-checkbox checkbox--m">
               <input type="checkbox"
                       class="mdc-checkbox__native-control"
                       id="checkbox-1"/>
@@ -263,7 +263,7 @@
             </div>
           </td>
           <td class="tbl__cell">
-            <div class="mdc-checkbox checkbox__gm">
+            <div class="mdc-checkbox checkbox--gm">
               <input type="checkbox"
                       class="mdc-checkbox__native-control"
                       id="checkbox-2"/>
@@ -283,7 +283,7 @@
         <tr>
           <td class="tbl__cell">Radio</td>
           <td class="tbl__cell">
-            <div class="mdc-radio radio__m">
+            <div class="mdc-radio radio--m">
               <input class="mdc-radio__native-control" type="radio" id="radio-1" name="radios">
               <div class="mdc-radio__background">
                 <div class="mdc-radio__outer-circle"></div>
@@ -292,7 +292,7 @@
             </div>
           </td>
           <td class="tbl__cell">
-            <div class="mdc-radio radio__gm">
+            <div class="mdc-radio radio--gm">
               <input class="mdc-radio__native-control" type="radio" id="radio-2" name="radios">
               <div class="mdc-radio__background">
                 <div class="mdc-radio__outer-circle"></div>
@@ -303,26 +303,28 @@
         </tr>
 
         <tr>
-            <td class="tbl__cell">Switch</td>
-            <td class="tbl__cell">
-              <div class="mdc-radio radio__m">
-                <input class="mdc-radio__native-control" type="radio" id="radio-1" name="radios">
-                <div class="mdc-radio__background">
-                  <div class="mdc-radio__outer-circle"></div>
-                  <div class="mdc-radio__inner-circle"></div>
+          <td class="tbl__cell">Switch</td>
+          <td class="tbl__cell">
+            <div class="mdc-switch switch--m">
+              <div class="mdc-switch__track"></div>
+              <div class="mdc-switch__thumb-underlay">
+                <div class="mdc-switch__thumb">
+                    <input type="checkbox" id="basic-switch1" class="mdc-switch__native-control" role="switch">
                 </div>
               </div>
-            </td>
-            <td class="tbl__cell">
-              <div class="mdc-radio radio__gm">
-                <input class="mdc-radio__native-control" type="radio" id="radio-2" name="radios">
-                <div class="mdc-radio__background">
-                  <div class="mdc-radio__outer-circle"></div>
-                  <div class="mdc-radio__inner-circle"></div>
+            </div>
+          </td>
+          <td class="tbl__cell">
+            <div class="mdc-switch switch--gm">
+              <div class="mdc-switch__track"></div>
+              <div class="mdc-switch__thumb-underlay">
+                <div class="mdc-switch__thumb">
+                    <input type="checkbox" id="basic-switch2" class="mdc-switch__native-control" role="switch">
                 </div>
               </div>
-            </td>
-          </tr>
+            </div>
+          </td>
+        </tr>
 
         <!--
         <tr>

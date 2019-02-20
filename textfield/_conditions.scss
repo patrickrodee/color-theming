@@ -11,6 +11,11 @@
       @include errorOutlinedTextField($micro_gmGrey700OnWhiteWithRed600);
       @include disabledOutlinedTextField($micro_gmDisabledColorSet);
     }
+
+    &--m {
+      @include defaultOutlinedTextField($micro_mBlackOnWhiteWithPurple);
+      @include errorOutlinedTextField($micro_mBlackOnWhiteWithError);
+    }
   }
 
   &__filled {
@@ -18,6 +23,11 @@
       @include defaultFilledTextField($micro_gmGrey900OnGrey50WithBlue600);
       @include errorFilledTextField($micro_gmGrey900OnGrey50WithRed600);
       @include disabledFilledTextField($micro_gmDisabledColorSet);
+    }
+
+    &--m {
+      @include defaultFilledTextField($micro_mBlackOnSuperLightGreyWithPurple);
+      @include errorFilledTextField($micro_mBlackOnSuperLightGreyWithRed);
     }
   }
 }

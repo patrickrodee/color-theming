@@ -5,6 +5,7 @@ import {MDCTabBar} from '@material/tab-bar';
 import {MDCList} from '@material/list';
 import {MDCCheckbox} from '@material/checkbox';
 import {MDCRadio} from '@material/radio';
+import {MDCSwitch} from '@material/switch';
 
 function childElementArray(root, query) {
   return [...root.querySelectorAll(query)]
@@ -52,6 +53,12 @@ const radios = new Set();
 elementArray('.mdc-radio').forEach((radioEl) => {
   const radio = new MDCRadio(radioEl);
   radios.add(radio);
+});
+
+const switches = new Set();
+elementArray('.mdc-switch').forEach((s) => {
+  const sw = new MDCSwitch(s);
+  switches.add(sw);
 });
 
 const disableControl = document.querySelector('.disabled-interactive-elements');

@@ -8,8 +8,13 @@
 @include mdc-checkbox(mdc-feature-without(color));
 
 .checkbox {
-  &__gm {
+  &--gm {
     @include defaultCheckbox($gmGrey700OnWhite);
     @include selectedCheckbox($gmWhiteOnBlue600);
+  }
+
+  &--m {
+    @include defaultCheckbox($micro_mBlackOnGrey);
+    @include selectedCheckbox($micro_mWhiteOnPurple);
   }
 }

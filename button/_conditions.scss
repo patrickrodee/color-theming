@@ -15,12 +15,21 @@
         @include disabledTextButton($micro_gmDisabledColorSet);
       }
     }
+    &--m {
+      @include defaultTextButton($micro_mBlackOnWhiteWithPurple);
+      @include disabledTextButton($micro_mDisabled);
+    }
   }
 
   &__filled {
     &--gm {
       @include defaultFilledButton($micro_gmWhiteOnBlue600);
       @include disabledFilledButton($micro_gmDisabledColorSet);
+    }
+
+    &--m {
+      @include defaultFilledButton($micro_mWhiteOnPurple);
+      @include disabledFilledButton($micro_mDisabled);
     }
   }
 
@@ -29,12 +38,22 @@
       @include defaultRaisedButton($micro_gmGrey700OnWhiteWithBlue600);
       @include disabledRaisedButton($micro_gmDisabledColorSet);
     }
+
+    &--m {
+      @include defaultRaisedButton($micro_mWhiteOnPurple);
+      @include disabledRaisedButton($micro_mDisabled);
+    }
   }
 
   &__outlined {
     &--gm {
       @include defaultOutlinedButton($micro_gmGrey700OnWhiteWithBlue600);
       @include disabledOutlinedButton($micro_gmDisabledColorSet);
+    }
+
+    &--m {
+      @include defaultOutlinedButton($micro_mBlackOnWhiteWithPurple);
+      @include disabledOutlinedButton($micro_mDisabled);
     }
   }
 }

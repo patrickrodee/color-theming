@@ -32,3 +32,53 @@ $blackOnGreyWithPrimaryAndAwkwardGrey: extendColorSet($blackOnGreyWithPrimary,
   $medium:      $awkwardMidGrey,
 );
 
+// *****************************************************************************
+// Micro Color Sets
+// *****************************************************************************
+$micro_mBlackOnWhiteWithPurple: newMicroColorSet(
+  $container:   $white,
+  $high:        opacifyWithBackground($black),
+  $medium:      opacifyWithBackground($darkGrey),
+  $low:         opacifyWithBackground($lightGrey),
+  $accent:      $purple,
+);
+
+$micro_mBlackOnWhiteWithError: extendMicroColorSet($micro_mBlackOnWhiteWithPurple,
+  $accent:      $error,
+);
+
+$micro_mWhiteOnPurple: newMicroColorSet(
+  $container:   $purple,
+  $high:        $white,
+  $medium:      opacifyWithBackground(rgba($white, .6), $purple),
+  $low:         opacifyWithBackground(rgba($white, .38), $purple),
+  $accent:      $white,
+);
+
+$micro_mDisabled: newMicroColorSet(
+  $container:   $superLightGrey,
+  $high:        opacifyWithBackground($black, $superLightGrey),
+  $medium:      opacifyWithBackground($darkGrey, $superLightGrey),
+  $low:         opacifyWithBackground($lightGrey, $superLightGrey),
+  $accent:      opacifyWithBackground($black, $superLightGrey),
+);
+
+$micro_mBlackOnSuperLightGreyWithPurple: newMicroColorSet(
+  $container:   $superLightGrey,
+  $high:        opacifyWithBackground($black, $superLightGrey),
+  $medium:      opacifyWithBackground($darkGrey, $superLightGrey),
+  $low:         opacifyWithBackground($lightGrey, $superLightGrey),
+  $accent:      $purple,
+);
+
+$micro_mBlackOnSuperLightGreyWithRed: extendMicroColorSet($micro_mBlackOnSuperLightGreyWithPurple,
+  $accent:      $error,
+);
+
+$micro_mBlackOnGrey: newMicroColorSet(
+  $container:   $veryLightGrey,
+  $high:        opacifyWithBackground($black, $veryLightGrey),
+  $medium:      opacifyWithBackground($darkGrey, $veryLightGrey),
+  $low:         opacifyWithBackground($lightGrey, $veryLightGrey),
+  $accent:      opacifyWithBackground($black, $veryLightGrey),
+);

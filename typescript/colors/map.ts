@@ -1,7 +1,6 @@
 import {Color, ColorSet} from './set';
 
 export interface ColorMap {};
-
 export abstract class SurfaceColorMap implements ColorMap {
   protected colorSet: ColorSet;
 

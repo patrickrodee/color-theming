@@ -8,8 +8,13 @@
 @include mdc-radio(mdc-feature-without(color));
 
 .radio {
-  &__gm {
+  &--gm {
     @include defaultRadio($micro_gmGrey700OnWhiteWithBlue600);
     @include selectedRadio($micro_gmGrey700OnWhiteWithBlue600);
+  }
+
+  &--m {
+    @include defaultRadio($micro_mBlackOnWhiteWithPurple);
+    @include selectedRadio($micro_mBlackOnWhiteWithPurple);
   }
 }

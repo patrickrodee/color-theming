@@ -8,8 +8,13 @@
 @include mdc-switch(mdc-feature-without(color));
 
 .switch {
-  &__gm {
-    @include defaultRadio($micro_gmGrey700OnWhiteWithBlue600);
-    @include selectedRadio($micro_gmWhiteOnBlue600);
+  &--gm {
+    @include defaultSwitch($micro_gmGrey700OnWhiteWithBlue600);
+    @include selectedSwitch($micro_gmWhiteOnBlue600);
+  }
+
+  &--m {
+    @include defaultSwitch($micro_mBlackOnWhiteWithPurple);
+    @include selectedSwitch($micro_mWhiteOnPurple);
   }
 }
