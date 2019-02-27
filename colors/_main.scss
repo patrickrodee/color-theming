@@ -1,5 +1,6 @@
 @import "../themes/gm/color_sets";
 @import "../themes/m/color_sets";
+@import "../themes/owl/color_sets";
 
 .color-sets {
   display: flex;
@@ -124,4 +125,17 @@
 
 .black-on-super-light-grey-with-error {
   @include colorSet($micro_mBlackOnSuperLightGreyWithRed);
+}
+
+// Owl
+.yellow-container {
+  @include colorSet($yellowContainer);
+}
+
+.magenta-container {
+  @include colorSet($magentaContainer);
+}
+
+.blue-container {
+  @include colorSet($blueContainer);
 }

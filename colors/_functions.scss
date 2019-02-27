@@ -40,8 +40,8 @@
   $medium:    ColorSet_getMediumEmphasis($colorSet),
   $low:       ColorSet_getLowEmphasis($colorSet),
   $accent:    ColorSet_getAccent($colorSet)) {
-    @return map-merge($colorSet, newMicroColorSet($container, $high, $medium, $low, $accent));
-  }
+  @return map-merge($colorSet, newMicroColorSet($container, $high, $medium, $low, $accent));
+}
 
 @function extendedColorMap($colorMap, $map) {
   @return map-merge($colorMap, $map);

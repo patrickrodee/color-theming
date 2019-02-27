@@ -2,6 +2,7 @@
 @import "theme";
 @import "themes/gm/color_sets";
 @import "themes/m/color_sets";
+@import "themes/owl/color_sets";
 
 .button {
   &__text {
@@ -30,6 +31,10 @@
     &--m {
       @include defaultFilledButton($micro_mWhiteOnPurple);
       @include disabledFilledButton($micro_mDisabled);
+    }
+
+    &--owl {
+      @include defaultFilledButton($magentaContainer);
     }
   }
 

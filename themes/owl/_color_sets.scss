@@ -1,0 +1,26 @@
+@import "../../colors/functions";
+@import "variables";
+
+$yellowContainer: newMicroColorSet(
+  $container:   $yellow,
+  $high:        $darkSurface,
+  $medium:      opacifyWithBackground(rgba($darkSurface, .6)),
+  $low:         opacifyWithBackground(rgba($darkSurface, .38)),
+  $accent:      $darkSurface,
+);
+
+$magentaContainer: newMicroColorSet(
+  $container:   $magenta,
+  $high:        $black,
+  $medium:      opacifyWithBackground(rgba($black, .6), $magenta),
+  $low:         opacifyWithBackground(rgba($black, .38), $magenta),
+  $accent:      $black,
+);
+
+$blueContainer: newMicroColorSet(
+  $container:   $blue,
+  $high:        $white,
+  $medium:      opacifyWithBackground(rgba($white, .6), $blue),
+  $low:         opacifyWithBackground(rgba($white, .38), $blue),
+  $accent:      $yellow,
+);

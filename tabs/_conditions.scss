@@ -2,10 +2,20 @@
 @import "theme";
 @import "themes/gm/color_sets";
 @import "themes/m/color_sets";
+@import "themes/owl/color_sets";
 
 .tabs {
   &--gm {
     @include defaultTab($micro_gmGrey700OnWhiteWithBlue600);
     @include activeTab($micro_gmGrey700OnWhiteWithBlue600);
+  }
+
+  &--owl {
+    @include defaultTab($blueContainer, (
+      ink: high,
+      icon: high,
+      indicator: high,
+    ));
+    @include activeTab($blueContainer);
   }
 }

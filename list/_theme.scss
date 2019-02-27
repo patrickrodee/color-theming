@@ -29,3 +29,15 @@
     @include mdc-list-item-meta-ink-color(getColor($colorSet, $colorMap, meta));
   }
 }
+
+@mixin defaultList($colorSet, $colorMap: $listMapping) {
+  @include mdc-list-item-primary-text-ink-color(getColor($colorSet, $colorMap, primaryTextLabel));
+  .mdc-list-item {
+    @include mdc-states(getColor($colorSet, $colorMap, primaryTextLabel));
+  }
+
+  @include mdc-list-item-secondary-text-ink-color(getColor($colorSet, $colorMap, secondaryTextLabel));
+  @include mdc-list-divider-color(getColor($colorSet, $colorMap, divider));
+  @include mdc-list-item-graphic-ink-color(getColor($colorSet, $colorMap, avatar));
+  @include mdc-list-item-meta-ink-color(getColor($colorSet, $colorMap, meta));
+}

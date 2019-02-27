@@ -98,11 +98,8 @@
 
 // Default Text Button
 @mixin defaultTextButton($colorSet, $colorMap: $defaultTextButtonMapping) {
-  @include ifColorMapHasKey($colorMap, ink) {
-    @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
-    @include mdc-states(getColor($colorSet, $colorMap, ink));
-  }
-
+  @include mdc-button-ink-color(getColor($colorSet, $colorMap, ink));
+  @include mdc-states(getColor($colorSet, $colorMap, ink));
   @include ifColorMapHasKey($colorMap, icon) {
     @include mdc-button-icon-color(getColor($colorSet, $colorMap, icon));
   }
