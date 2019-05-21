@@ -6,4 +6,4 @@
 @import "theme";
 
 // Load all list Sass without color
-@include mdc-switch();
+@include mdc-switch-core-styles(mdc-feature-without(color));

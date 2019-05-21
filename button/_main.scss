@@ -5,7 +5,7 @@
 @import "button/theme";
 
 // Load all button Sass without colors
-@include mdc-button(mdc-feature-without(color));
+@include mdc-button-core-styles(mdc-feature-without(color));
 
 // **********************************
 // TEXT BUTTONS
@@ -62,17 +62,7 @@ $gmTextButtonMapping: extendedColorMap($textButtonMapping, (
   @include outlinedButton($blackOnWhiteWithPrimary);
 }
 
-// Solves the disconnect between GM outline and M outline
-$gmOutlinedButtonMapping: extendedColorMap($elevatedButtonMapping, (
-  outline: low,
-));
-
-// Aligned w/ GM via a mapping change from "high" outline to "low"
-.m-button--outlined--aligned {
-  @include outlinedButton($blackOnWhiteWithPrimary, $gmOutlinedButtonMapping);
-}
-
 // Changes to color set and color mapping
 .gm-button--outlined {
-  @include outlinedButton($gmGrey800OnWhite, $gmOutlinedButtonMapping);
+  @include outlinedButton($gmGrey800OnWhite);
 }

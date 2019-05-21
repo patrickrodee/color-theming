@@ -5,7 +5,7 @@
 @import "themes/m/color_sets";
 
 // Load all switch Sass without colors
-@include mdc-switch(mdc-feature-without(color));
+@include mdc-switch-core-styles(mdc-feature-without(color));
 
 .switch {
   &--gm {

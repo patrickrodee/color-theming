@@ -5,7 +5,7 @@
 @import "list/theme";
 
 // Load all list Sass without color
-@include mdc-list(mdc-feature-without(color));
+@include mdc-list-core-styles(mdc-feature-without(color));
 
 // **********************************
 // LIST
